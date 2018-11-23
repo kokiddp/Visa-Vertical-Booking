@@ -81,7 +81,7 @@ class Vvb_Admin_Options {
 	 *
 	 * @return void
 	 */
-	public function vvb_stub() {
+	public function vvb_setting_stub() {
 		echo "<input type='text' id='vvb_stub' name='vvb_options[stub]' value='{$this->options['stub']}' />";
 	}
 
