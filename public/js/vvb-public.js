@@ -36248,7 +36248,7 @@ require('angular');
         $compileProvider.cssClassDirectivesEnabled(false);
     }]);
 
-    app.controller('insoleController',[
+    app.controller('vvbController',[
         "$scope",
         "$http",
         "$httpParamSerializerJQLike",
