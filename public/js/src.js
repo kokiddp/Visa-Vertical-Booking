@@ -34,8 +34,8 @@ var _ = require('lodash');
         function($scope,$http,$httpParamSerializerJQLike,$window) {
 
             $scope.form = {
-                arrivalDate: new Date(),
-                departDate: moment(new Date()).add(1, 'd').toDate(),
+                arrivalDate: moment(new Date()).startOf('day').toDate(),
+                departDate: moment(new Date()).startOf('day').add(1, 'd').toDate(),
                 rooms: [{
                     id: 1,
                     adulti: 2,
@@ -68,11 +68,11 @@ var _ = require('lodash');
 
             $scope.internal = {
                 minArrivalDate: new Date(),
-                maxArrivalDate: moment(new Date()).add(1, 'y').toDate(),
-                minDepartDate: moment(new Date()).add(1, 'd').toDate(),
-                maxDepartDate: moment(new Date()).add({days:7,years:1}).toDate(),
-                arrival: moment($scope.form.arrivalDate),
-                depart: moment($scope.form.departDate)
+                maxArrivalDate: moment(new Date()).startOf('day').add(1, 'y').toDate(),
+                minDepartDate: moment(new Date()).startOf('day').add(1, 'd').toDate(),
+                maxDepartDate: moment(new Date()).startOf('day').add({days:7,years:1}).toDate(),
+                arrival: moment($scope.form.arrivalDate).startOf('day'),
+                depart: moment($scope.form.departDate).startOf('day'),
             }
 
             $scope.$watch("form.rooms", function(){
@@ -82,8 +82,8 @@ var _ = require('lodash');
             }, true);
 
             $scope.$watch("form.arrivalDate", function(){
-                $scope.internal.arrival = moment($scope.form.arrivalDate);
-                $scope.internal.depart = moment($scope.form.departDate);
+                $scope.internal.arrival = moment($scope.form.arrivalDate).startOf('day');
+                $scope.internal.depart = moment($scope.form.departDate).startOf('day');
                 $scope.internal.minDepartDate = moment($scope.internal.arrival.toDate()).add(1, 'd').toDate();
                 $scope.internal.maxDepartDate = moment($scope.internal.arrival.toDate()).add(7, 'd').toDate();
                 $scope.submit.gg = $scope.internal.arrival.format('D');
@@ -93,8 +93,8 @@ var _ = require('lodash');
             }, true);
 
             $scope.$watch("form.departDate", function(){
-                $scope.internal.arrival = moment($scope.form.arrivalDate);
-                $scope.internal.depart = moment($scope.form.departDate);
+                $scope.internal.arrival = moment($scope.form.arrivalDate).startOf('day');
+                $scope.internal.depart = moment($scope.form.departDate).startOf('day');
                 $scope.submit.ggf = $scope.internal.depart.format('D');
                 $scope.submit.mmf = $scope.internal.depart.format('M');
                 $scope.submit.aaf = $scope.internal.depart.format('YYYY');
@@ -109,7 +109,7 @@ var _ = require('lodash');
                     minAdulti: 1,
                     maxAdulti: 5,
                     minBambini: 0,
-                    maxBambini: 5
+                    maxBambini: 4,
                 });
             }
 
