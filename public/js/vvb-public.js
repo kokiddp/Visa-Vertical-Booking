@@ -42088,7 +42088,9 @@ require('moment-timezone');
                 $scope.form.rooms.push({
                     id: $scope.form.rooms[$scope.form.rooms.length-1].id+1,
                     adulti: 2,
-                    bambini: 0
+                    bambini: 0,
+                    maxAdulti: 5,
+                    maxBambini: 4
                 });
             }
 
