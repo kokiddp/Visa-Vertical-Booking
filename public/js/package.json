@@ -1,0 +1,13 @@
+{
+  "name": "vvb-public",
+  "version": "1.0.0",
+  "description": "Visa Vertical Booking",
+  "main": "vvb-public.js",
+  "author": "Gabriele Coquillard",
+  "license": "GPL-2.0-or-later",
+  "dependencies": {},
+  "scripts": {
+    "watch": "watchify src.js -o vvb-public.js -v",
+    "build": "uglifyjs -m -c -o vvb-public.min.js vvb-public.js"
+  }
+}

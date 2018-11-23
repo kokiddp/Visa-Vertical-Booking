@@ -41,16 +41,28 @@ class Vvb_Public {
 	private $version;
 
 	/**
+	 * The version of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      string    $environment    The environment state of the plugin.
+	 */
+	private $environment;
+
+	/**
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
 	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+	public function __construct( $plugin_name, $version, $environment ) {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+		$this->environment = $environment;
+
+		$this::add_dependencies();
 
 	}
 
@@ -96,7 +108,21 @@ class Vvb_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vvb-public.js', array( 'jquery' ), $this->version, false );
+		if ( $this->environment == 'production' ) {
+			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vvb-public-min.js', array( 'jquery' ), $this->version, false );
+		}
+		else {
+			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vvb-public.js', array( 'jquery' ), time(), false );
+		}
+
+	}
+
+	/**
+	 * Load the dependencies for the public-facing side of the site.
+	 *
+	 * @since    1.0.0
+	 */
+	public function add_dependencies() {
 
 	}
 

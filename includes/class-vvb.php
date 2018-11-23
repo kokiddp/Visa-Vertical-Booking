@@ -58,6 +58,15 @@ class Vvb {
 	protected $version;
 
 	/**
+	 * The current version of the plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      string    $environment    The environment state of the plugin.
+	 */
+	protected $environment;
+
+	/**
 	 * Define the core functionality of the plugin.
 	 *
 	 * Set the plugin name and the plugin version that can be used throughout the plugin.
@@ -67,12 +76,17 @@ class Vvb {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'PLUGIN_NAME_VERSION' ) ) {
-			$this->version = PLUGIN_NAME_VERSION;
+		if ( defined( 'VVB_VERSION' ) ) {
+			$this->version = VVB_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
 		$this->plugin_name = 'vvb';
+		if ( defined( 'VVB_ENVIRONMENT' ) ) {
+			$this->environment = VVB_ENVIRONMENT;
+		} else {
+			$this->environment = 'development';
+		}
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -122,6 +136,11 @@ class Vvb {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-vvb-public.php';
 
+		/**
+		 * Composer
+		 */
+		require plugin_dir_path( dirname( __FILE__ ) ) . 'vendor/autoload.php';
+
 		$this->loader = new Vvb_Loader();
 
 	}
@@ -152,7 +171,7 @@ class Vvb {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Vvb_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Vvb_Admin( $this->get_plugin_name(), $this->get_version(), $this->get_environment() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -168,7 +187,7 @@ class Vvb {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Vvb_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Vvb_Public( $this->get_plugin_name(), $this->get_version(), $this->get_environment() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -213,6 +232,16 @@ class Vvb {
 	 */
 	public function get_version() {
 		return $this->version;
+	}
+
+	/**
+	 * Retrieve the environment of the plugin.
+	 *
+	 * @since     1.0.0
+	 * @return    string    The version number of the plugin.
+	 */
+	public function get_environment() {
+		return $this->environment;
 	}
 
 }
