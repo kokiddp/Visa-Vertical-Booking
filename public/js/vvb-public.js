@@ -59203,9 +59203,7 @@ var _ = require('lodash');
 
             $scope.internal = {
                 minArrivalDate: moment(new Date()).startOf('day').toDate(),
-                maxArrivalDate: moment(new Date()).startOf('day').add(1, 'y').toDate(),
                 minDepartDate: moment(new Date()).startOf('day').add(1, 'd').toDate(),
-                maxDepartDate: moment(new Date()).startOf('day').add({days:7,years:1}).toDate(),
                 arrival: moment($scope.form.arrivalDate).startOf('day'),
                 depart: moment($scope.form.departDate).startOf('day'),
             }
@@ -59220,7 +59218,6 @@ var _ = require('lodash');
                 $scope.internal.arrival = moment($scope.form.arrivalDate).startOf('day');
                 $scope.internal.depart = moment($scope.form.departDate).startOf('day');
                 $scope.internal.minDepartDate = moment($scope.internal.arrival.toDate()).add(1, 'd').toDate();
-                $scope.internal.maxDepartDate = moment($scope.internal.arrival.toDate()).add(7, 'd').toDate();
                 $scope.submit.gg = $scope.internal.arrival.format('D');
                 $scope.submit.mm = $scope.internal.arrival.format('M');
                 $scope.submit.aa = $scope.internal.arrival.format('YYYY');
