@@ -59202,7 +59202,7 @@ var _ = require('lodash');
             }
 
             $scope.internal = {
-                minArrivalDate: new Date(),
+                minArrivalDate: moment(new Date()).startOf('day').toDate(),
                 maxArrivalDate: moment(new Date()).startOf('day').add(1, 'y').toDate(),
                 minDepartDate: moment(new Date()).startOf('day').add(1, 'd').toDate(),
                 maxDepartDate: moment(new Date()).startOf('day').add({days:7,years:1}).toDate(),
