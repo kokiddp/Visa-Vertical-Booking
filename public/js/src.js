@@ -10,7 +10,8 @@ require('moment-timezone');
 	 * On DOM ready:
 	 */
 	$(function() {	
-		console.log('Visa Vertical Booking by Gabriele Coquillard @ VisaMultimedia');	
+        console.log('Visa Vertical Booking by Gabriele Coquillard @ VisaMultimedia');
+        moment.locale('it');
 	});
 
 	/**
@@ -34,7 +35,41 @@ require('moment-timezone');
             $scope.form = {
                 arrivalDate: new Date(),
                 departDate: new Date(),
-                rooms: 1,
+                rooms: [
+                    {
+                        id: 1,
+                        adulti: 2,
+                        bambini: 0
+                    }
+                ],
+            }
+
+            $scope.submit = {
+                tot_camere: 0,
+                tot_adulti: 0,
+                tot_bambini: 0,
+                gg: 1,
+                mm: 1,
+                aa: 1970,
+                ggf: 2,
+                mmf: 1,
+                aaf: 1970,
+                notti_1: 1,
+                tot_camere: 1,
+                notti_1: 1,
+                lingua_int: 'ita'
+            }
+
+            $scope.addRoom = function(){
+                $scope.form.rooms.push({
+                    id: $scope.form.rooms[$scope.form.rooms.length-1].id+1,
+                    adulti: 2,
+                    bambini: 0
+                });
+            }
+
+            $scope.removeRoom = function(){
+                $scope.form.rooms.splice(-1,1);
             }
             
     }]);
