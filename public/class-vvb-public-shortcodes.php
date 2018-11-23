@@ -77,10 +77,10 @@ class Vvb_Public_Shortcodes {
 				
 				<div ng-repeat="x in form.rooms">
 					<select ng-model="x.adulti">
-						<option ng-repeat="n in [].constructor(5) track by $index+1"></option>
+						<option ng-repeat="n in [].constructor(5) track by $index+1">{{$index+1}}</option>
 					</select>
 					<select ng-model="x.bambini">
-						<option ng-repeat="n in [].constructor(5) track by $index+1"></option>
+						<option ng-repeat="n in [].constructor(5) track by $index+1">{{$index+1}}</option>
 					</select>
 				</div>
 
