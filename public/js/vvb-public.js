@@ -42101,6 +42101,15 @@ require('moment-timezone');
             $scope.removeRoom = function(){
                 $scope.form.rooms.splice(-1,1);
             }
+
+            $scope.submitForm = function(){
+                $scope.submit.tot_camere = $scope.form.rooms.length;
+                //TODO:
+                //-fai la conta
+                //-smonta le date
+                //-componi la querystring
+                //-apri pagina in blank
+            }
             
     }]);
     
