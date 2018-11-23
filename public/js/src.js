@@ -72,12 +72,17 @@ var _ = require('lodash');
                 depart: moment($scope.form.departDate).startOf('day'),
                 url: '',
                 queryString: '',
+                maxRooms: 5
             }
 
             $scope.$watch("form.rooms", function(){
                 $scope.submit.tot_camere = $scope.form.rooms.length;
                 $scope.submit.tot_adulti = _.sumBy($scope.form.rooms, function(r) { return r.adulti; });
                 $scope.submit.tot_bambini = _.sumBy($scope.form.rooms, function(r) { return r.bambini; });
+                _.forEach($scope.form.rooms, function(value){
+                    _.set($scope.submit, 'adulti' + value.id, value.adulti);
+                    _.set($scope.submit, 'bambini' + value.id, value.bambini);
+                })
             }, true);
 
             $scope.$watch("form.arrivalDate", function(){
@@ -116,7 +121,6 @@ var _ = require('lodash');
             }
 
             $scope.submitForm = function(){
-                //$scope.internal.queryString = _.join(_.values($scope.submit), '&');
                 $scope.internal.queryString = _.reduce($scope.submit, function(result, value, key) { return (!_.isNull(value) && !_.isUndefined(value)) ? (result += key + '=' + value + '&') : result; }, '').slice(0, -1);
                 $window.open($scope.internal.url+'?'+$scope.internal.queryString);
             }
