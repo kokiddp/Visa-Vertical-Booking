@@ -59201,6 +59201,11 @@ var _ = require('lodash');
                 lingua_int: 'ita',
             }
 
+            $scope.internal = {
+                arrival: moment($scope.form.arrivalDate),
+                depart: moment($scope.form.arrivalDate)
+            }
+
             $scope.$watch("form.rooms", function(){
                 $scope.submit.tot_camere = $scope.form.rooms.length;
                 $scope.submit.tot_adulti = _.sumBy($scope.form.rooms, function(r) { return r.adulti; });
@@ -59208,21 +59213,23 @@ var _ = require('lodash');
             }, true);
 
             $scope.$watch("form.arrivalDate", function(){
-                var arrival = moment($scope.form.arrivalDate);
-                var depart = moment($scope.form.arrivalDate);
-                $scope.submit.gg = arrival.format('D');
-                $scope.submit.mm = arrival.format('M');
-                $scope.submit.aa = arrival.format('YYYY');
-                $scope.submit.notti_1 = depart.diff(arrival, 'days');
+                debugger;
+                $scope.internal.arrival = moment($scope.form.arrivalDate);
+                $scope.internal.depart = moment($scope.form.arrivalDate);
+                $scope.submit.gg = $scope.internal.arrival.format('D');
+                $scope.submit.mm = $scope.internal.arrival.format('M');
+                $scope.submit.aa = $scope.internal.arrival.format('YYYY');
+                $scope.submit.notti_1 = $scope.internal.depart.diff($scope.internal.arrival, 'days');
             }, true);
 
             $scope.$watch("form.departDate", function(){
-                var arrival = moment($scope.form.arrivalDate);
-                var depart = moment($scope.form.arrivalDate);
-                $scope.submit.ggf = depart.format('D');
-                $scope.submit.mmf = depart.format('M');
-                $scope.submit.aaf = depart.format('YYYY');
-                $scope.submit.notti_1 = depart.diff(arrival, 'days');
+                debugger;
+                $scope.internal.arrival = moment($scope.form.arrivalDate);
+                $scope.internal.depart = moment($scope.form.arrivalDate);
+                $scope.submit.ggf = $scope.internal.depart.format('D');
+                $scope.submit.mmf = $scope.internal.depart.format('M');
+                $scope.submit.aaf = $scope.internal.depart.format('YYYY');
+                $scope.submit.notti_1 = $scope.internal.depart.diff($scope.internal.arrival, 'days');
             }, true);
 
             $scope.addRoom = function(){
