@@ -59180,7 +59180,6 @@ var _ = require('lodash');
                     minBambini: 0,
                     maxBambini: 5
                 }],
-                url: '',
             }
 
             $scope.submit = {
@@ -59206,6 +59205,8 @@ var _ = require('lodash');
                 minDepartDate: moment(new Date()).startOf('day').add(1, 'd').toDate(),
                 arrival: moment($scope.form.arrivalDate).startOf('day'),
                 depart: moment($scope.form.departDate).startOf('day'),
+                url: '',
+                queryString: '',
             }
 
             $scope.$watch("form.rooms", function(){
@@ -59251,8 +59252,8 @@ var _ = require('lodash');
 
             $scope.submitForm = function(){
                 //TODO:
-                //-componi la querystring
-                //-apri pagina in blank
+                $scope.internal.queryString = _.join(_.values($scope.submit), '&');
+                $window.open($scope.internal.url+'?'+$scope.internal.queryString);
             }
             
     }]);
