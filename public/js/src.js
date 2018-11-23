@@ -67,6 +67,18 @@ var _ = require('lodash');
                 lingua_int: 'ita',
             }
 
+            $scope.$watch("form.arrivalDate", function(){
+                $scope.submit.gg = moment($scope.form.arrivalDate).format('D');
+                $scope.submit.mm = moment($scope.form.arrivalDate).format('M');
+                $scope.submit.aa = moment($scope.form.arrivalDate).format('YYYY');
+            }, true);
+
+            $scope.$watch("form.departDate", function(){
+                $scope.submit.gg = moment($scope.form.departDate).format('D');
+                $scope.submit.mm = moment($scope.form.departDate).format('M');
+                $scope.submit.aa = moment($scope.form.departDate).format('YYYY');
+            }, true);
+
             $scope.addRoom = function(){
                 $scope.form.rooms.push({
                     id: $scope.form.rooms[$scope.form.rooms.length-1].id+1,
@@ -84,12 +96,6 @@ var _ = require('lodash');
             }
 
             $scope.submitForm = function(){
-                $scope.submit.gg = moment($scope.form.arrivalDate).format('D');
-                $scope.submit.mm = moment($scope.form.arrivalDate).format('M');
-                $scope.submit.gg = moment($scope.form.arrivalDate).format('YYYY');
-                $scope.submit.gg = moment($scope.form.departDate).format('D');
-                $scope.submit.mm = moment($scope.form.departDate).format('M');
-                $scope.submit.gg = moment($scope.form.departDate).format('YYYY');
                 $scope.submit.tot_camere = $scope.form.rooms.length;
                 //TODO:
                 //-fai la conta
