@@ -72,7 +72,9 @@ class Vvb_Public_Shortcodes {
 
 				<input type="date" ng-model="form.departDate" name="">
 
-				<select ng-model="form.rooms" ng-options="n for n in [] | range:1:5"></select>
+				<select ng-model="form.rooms">
+					<option ng-repeat="n in [].constructor(5) track by $index+1">{{$index+1}}</option>
+				</select>
 
 				<input type="submit" ng-disabled="vvbForm.$invalid" value="<?= __( 'Submit', 'vvb' ) ?>" />
 			</form>
