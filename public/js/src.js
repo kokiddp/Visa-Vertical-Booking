@@ -38,7 +38,9 @@ require('moment-timezone');
                 rooms: [{
                     id: 1,
                     adulti: 2,
-                    bambini: 0
+                    bambini: 0,
+                    maxAdulti: 5,
+                    maxBambini: 4
                 }],
             }
 
