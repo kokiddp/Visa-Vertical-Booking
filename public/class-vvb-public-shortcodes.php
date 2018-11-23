@@ -72,7 +72,7 @@ class Vvb_Public_Shortcodes {
 
 				<input type="date" ng-model="form.departDate">
 
-				<select ng-model="form.rooms">
+				<select ng-model="form.rooms" ng-init="form.rooms = 1">
 					<option ng-repeat="n in [].constructor(5) track by $index+1">{{$index+1}}</option>
 				</select>
 				<span>{{form.rooms}}</span>
