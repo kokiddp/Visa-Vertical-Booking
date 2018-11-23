@@ -87,6 +87,15 @@ class Vvb_Public_Shortcodes {
 					<span>{{x.bambini}}</span>
 				</div>
 
+				<div ng-repeat="x in form.rooms">
+					<span>{{x.id}}</span>
+					<select ng-model="x.adulti" ng-options="n for n in [] | range:x.minAdulti:(x.maxAdulti - x.bambini)"></select>
+					<span>{{x.adulti}}</span>
+					<select ng-model="x.bambini" ng-options="n for n in [] | range:x.minBambini:(x.maxBambini - x.adulti)"></select>
+					<span>{{x.bambini}}</span>
+				</div>
+				
+
 				<input type="submit" ng-disabled="vvbForm.$invalid" value="<?= __( 'Submit', 'vvb' ) ?>" />
 			</form>
 

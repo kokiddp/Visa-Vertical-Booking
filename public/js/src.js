@@ -39,8 +39,10 @@ require('moment-timezone');
                     id: 1,
                     adulti: 2,
                     bambini: 0,
+                    minAdulti: 1,
                     maxAdulti: 5,
-                    maxBambini: 4
+                    minBambini: 0,
+                    maxBambini: 5
                 }],
             }
 
@@ -65,8 +67,10 @@ require('moment-timezone');
                     id: $scope.form.rooms[$scope.form.rooms.length-1].id+1,
                     adulti: 2,
                     bambini: 0,
+                    minAdulti: 1,
                     maxAdulti: 5,
-                    maxBambini: 4
+                    minBambini: 0,
+                    maxBambini: 5
                 });
             }
 
