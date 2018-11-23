@@ -5,9 +5,12 @@
   "main": "vvb-public.js",
   "author": "Gabriele Coquillard",
   "license": "GPL-2.0-or-later",
-  "dependencies": {},
+  "dependencies": {
+    "angular": "^1.7.5"
+  },
   "scripts": {
     "watch": "watchify src.js -o vvb-public.js -v",
+    "annotate": "ng-annotate -a src.js -o src.js ",
     "build": "uglifyjs -m -c -o vvb-public.min.js vvb-public.js"
   }
 }
