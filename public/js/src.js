@@ -117,7 +117,7 @@ var _ = require('lodash');
 
             $scope.submitForm = function(){
                 //$scope.internal.queryString = _.join(_.values($scope.submit), '&');
-                $scope.internal.queryString = _.reduce(obj, function(result, value, key) { return (!_.isNull(value) && !_.isUndefined(value)) ? (result += key + '=' + value + '&') : result; }, '').slice(0, -1);
+                $scope.internal.queryString = _.reduce($scope.submit, function(result, value, key) { return (!_.isNull(value) && !_.isUndefined(value)) ? (result += key + '=' + value + '&') : result; }, '').slice(0, -1);
                 $window.open($scope.internal.url+'?'+$scope.internal.queryString);
             }
             
