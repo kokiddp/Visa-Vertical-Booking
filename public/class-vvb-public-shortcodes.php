@@ -66,7 +66,7 @@ class Vvb_Public_Shortcodes {
 
 		<div id="angular-app" ng-app="vvb" ng-controller="vvbController" ng-cloak ng-strict-di>
 
-			<form name="vvbForm" ng-init="form.url=<?= $this->options['url'] ?>;submit.id_albergo=<?= $this->options['id_albergo'] ?>;submit.id_stile=<?= $this->options['id_stile'] ?>;submit.dc=<?= $this->options['dc'] ?>" novalidate>
+			<form name="vvbForm" ng-init="form.url=<?= $this->options['url'] ?>;submit.id_albergo='<?= $this->options['id_albergo'] ?>';submit.id_stile=<?= $this->options['id_stile'] ?>;submit.dc=<?= $this->options['dc'] ?>" novalidate>
 
 				<input type="date" ng-model="form.arrivalDate">
 
