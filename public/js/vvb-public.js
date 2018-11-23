@@ -59217,6 +59217,7 @@ var _ = require('lodash');
             }, true);
 
             $scope.$watch("form.arrivalDate", function(){
+                debugger;
                 $scope.internal.arrival = moment($scope.form.arrivalDate);
                 $scope.internal.depart = moment($scope.form.departDate);
                 $scope.internal.minDepartDate = $scope.internal.arrival.add(1, 'd').toDate();
