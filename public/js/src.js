@@ -2,6 +2,7 @@ require('angular');
 var moment = require('moment');
 require('moment/locale/it');
 require('moment-timezone');
+var _ = require('lodash');
 
 (function( $ ) {
 	'use strict';
@@ -63,7 +64,7 @@ require('moment-timezone');
                 notti_1: 1,
                 tot_camere: 1,
                 notti_1: 1,
-                lingua_int: 'ita'
+                lingua_int: 'ita',
             }
 
             $scope.addRoom = function(){
@@ -83,10 +84,15 @@ require('moment-timezone');
             }
 
             $scope.submitForm = function(){
+                $scope.submit.gg = moment($scope.form.arrivalDate).format('D');
+                $scope.submit.mm = moment($scope.form.arrivalDate).format('M');
+                $scope.submit.gg = moment($scope.form.arrivalDate).format('YYYY');
+                $scope.submit.gg = moment($scope.form.departDate).format('D');
+                $scope.submit.mm = moment($scope.form.departDate).format('M');
+                $scope.submit.gg = moment($scope.form.departDate).format('YYYY');
                 $scope.submit.tot_camere = $scope.form.rooms.length;
                 //TODO:
                 //-fai la conta
-                //-smonta le date
                 //-componi la querystring
                 //-apri pagina in blank
             }

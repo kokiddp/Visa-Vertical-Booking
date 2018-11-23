@@ -80,7 +80,9 @@ class Vvb_Public_Shortcodes {
 					<select ng-model="x.adulti" ng-options="n for n in [] | range:x.minAdulti:(x.maxAdulti - x.bambini + 1)"></select>
 					<label><?= __( 'Children', 'vvb' ) ?></label>
 					<select ng-model="x.bambini" ng-options="n for n in [] | range:x.minBambini:(x.maxBambini - x.adulti + 1)"></select>
-				</div>				
+				</div>
+
+				<div>{{submit | json}}</div>
 
 				<input type="submit" ng-click="submitForm()" ng-disabled="vvbForm.$invalid" value="<?= __( 'Submit', 'vvb' ) ?>" />
 			</form>
