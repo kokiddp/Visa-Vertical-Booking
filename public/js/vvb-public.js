@@ -59209,9 +59209,9 @@ var _ = require('lodash');
             }, true);
 
             $scope.$watch("form.departDate", function(){
-                $scope.submit.gg = moment($scope.form.departDate).format('D');
-                $scope.submit.mm = moment($scope.form.departDate).format('M');
-                $scope.submit.aa = moment($scope.form.departDate).format('YYYY');
+                $scope.submit.ggf = moment($scope.form.departDate).format('D');
+                $scope.submit.mmf = moment($scope.form.departDate).format('M');
+                $scope.submit.aaf = moment($scope.form.departDate).format('YYYY');
             }, true);
 
             $scope.addRoom = function(){
