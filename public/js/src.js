@@ -35,7 +35,7 @@ var _ = require('lodash');
 
             $scope.form = {
                 arrivalDate: new Date(),
-                departDate: new Date(),
+                departDate: moment(new Date()).add(1, 'd').toDate(),
                 rooms: [{
                     id: 1,
                     adulti: 2,
@@ -67,6 +67,10 @@ var _ = require('lodash');
             }
 
             $scope.internal = {
+                minArrivalDate: new Date(),
+                maxArrivalDate: moment(new Date()).add(1, 'y').toDate(),
+                minDepartDate: moment(new Date()).add(1, 'd').toDate(),
+                maxDepartDate: moment(new Date()).add({days:7,years:1}).toDate(),
                 arrival: moment($scope.form.arrivalDate),
                 depart: moment($scope.form.departDate)
             }
@@ -80,6 +84,8 @@ var _ = require('lodash');
             $scope.$watch("form.arrivalDate", function(){
                 $scope.internal.arrival = moment($scope.form.arrivalDate);
                 $scope.internal.depart = moment($scope.form.departDate);
+                $scope.internal.minDepartDate = $scope.internal.arrival.add(1, 'd').toDate();
+                $scope.internal.maxDepartDate = $scope.internal.arrival.add(7, 'd').toDate();
                 $scope.submit.gg = $scope.internal.arrival.format('D');
                 $scope.submit.mm = $scope.internal.arrival.format('M');
                 $scope.submit.aa = $scope.internal.arrival.format('YYYY');
