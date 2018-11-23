@@ -66,7 +66,7 @@ class Vvb_Public_Shortcodes {
 
 		<div id="angular-app" ng-app="vvb" ng-controller="vvbController" ng-cloak ng-strict-di>
 
-			<form name="vvbForm" novalidate>
+			<form name="vvbForm" ng-init="form.url=<?= $this->options['url'] ?>;submit.id_albergo=<?= $this->options['id_albergo'] ?>;submit.id_stile=<?= $this->options['id_stile'] ?>;submit.dc=<?= $this->options['dc'] ?>" novalidate>
 
 				<input type="date" ng-model="form.arrivalDate">
 
@@ -76,7 +76,9 @@ class Vvb_Public_Shortcodes {
 				<input type="button" ng-click="removeRoom()" ng-disabled="form.rooms.length == 1" value="<?= __( 'Remove room', 'vvb' ) ?>" />
 
 				<div ng-repeat="x in form.rooms">
+					<label><?= __( 'Adults', 'vvb' ) ?></label>
 					<select ng-model="x.adulti" ng-options="n for n in [] | range:x.minAdulti:(x.maxAdulti - x.bambini + 1)"></select>
+					<label><?= __( 'Children', 'vvb' ) ?></label>
 					<select ng-model="x.bambini" ng-options="n for n in [] | range:x.minBambini:(x.maxBambini - x.adulti + 1)"></select>
 				</div>				
 

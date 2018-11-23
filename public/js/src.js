@@ -44,9 +44,13 @@ require('moment-timezone');
                     minBambini: 0,
                     maxBambini: 5
                 }],
+                url: '',
             }
 
             $scope.submit = {
+                id_albergo: '',
+                id_stile: '',
+                dc: '',
                 tot_camere: 0,
                 tot_adulti: 0,
                 tot_bambini: 0,
