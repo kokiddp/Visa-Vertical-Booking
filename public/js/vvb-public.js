@@ -59217,11 +59217,12 @@ var _ = require('lodash');
             }, true);
 
             $scope.$watch("form.arrivalDate", function(){
-                debugger;
                 $scope.internal.arrival = moment($scope.form.arrivalDate);
                 $scope.internal.depart = moment($scope.form.departDate);
-                $scope.internal.minDepartDate = $scope.internal.arrival.add(1, 'd').toDate();
-                $scope.internal.maxDepartDate = $scope.internal.arrival.add(7, 'd').toDate();
+                $scope.internal.minDepartDate = $scope.internal.arrival;
+                $scope.internal.maxDepartDate = $scope.internal.arrival;
+                $scope.internal.minDepartDate.add(1, 'd').toDate();
+                $scope.internal.maxDepartDate.add(7, 'd').toDate();
                 $scope.submit.gg = $scope.internal.arrival.format('D');
                 $scope.submit.mm = $scope.internal.arrival.format('M');
                 $scope.submit.aa = $scope.internal.arrival.format('YYYY');
