@@ -68,7 +68,7 @@ var _ = require('lodash');
 
             $scope.internal = {
                 arrival: moment($scope.form.arrivalDate),
-                depart: moment($scope.form.arrivalDate)
+                depart: moment($scope.form.departDate)
             }
 
             $scope.$watch("form.rooms", function(){
@@ -78,9 +78,8 @@ var _ = require('lodash');
             }, true);
 
             $scope.$watch("form.arrivalDate", function(){
-                debugger;
                 $scope.internal.arrival = moment($scope.form.arrivalDate);
-                $scope.internal.depart = moment($scope.form.arrivalDate);
+                $scope.internal.depart = moment($scope.form.departDate);
                 $scope.submit.gg = $scope.internal.arrival.format('D');
                 $scope.submit.mm = $scope.internal.arrival.format('M');
                 $scope.submit.aa = $scope.internal.arrival.format('YYYY');
@@ -88,9 +87,8 @@ var _ = require('lodash');
             }, true);
 
             $scope.$watch("form.departDate", function(){
-                debugger;
                 $scope.internal.arrival = moment($scope.form.arrivalDate);
-                $scope.internal.depart = moment($scope.form.arrivalDate);
+                $scope.internal.depart = moment($scope.form.departDate);
                 $scope.submit.ggf = $scope.internal.depart.format('D');
                 $scope.submit.mmf = $scope.internal.depart.format('M');
                 $scope.submit.aaf = $scope.internal.depart.format('YYYY');
