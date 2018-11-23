@@ -68,9 +68,9 @@ class Vvb_Public_Shortcodes {
 
 			<form name="vvbForm" ng-init="form.url='<?= $this->options['url'] ?>';submit.id_albergo=<?= $this->options['id_albergo'] ?>;submit.id_stile=<?= $this->options['id_stile'] ?>;submit.dc=<?= $this->options['dc'] ?>" novalidate>
 
-				<input type="date" ng-model="form.arrivalDate">
+				<input type="date" ng-model="form.arrivalDate" min="{{new Date() | date:'yyyy-MM-dd'}}" max="{{form.departDate | date:'yyyy-MM-dd'}}">
 
-				<input type="date" ng-model="form.departDate">
+				<input type="date" ng-model="form.departDate" min="{{new Date() | date:'yyyy-MM-dd'}}">
 
 				<input type="button" ng-click="addRoom()" ng-disabled="form.rooms.length >= 5" value="<?= __( 'Add room', 'vvb' ) ?>" />
 				<input type="button" ng-click="removeRoom()" ng-disabled="form.rooms.length == 1" value="<?= __( 'Remove room', 'vvb' ) ?>" />
