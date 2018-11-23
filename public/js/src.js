@@ -82,6 +82,7 @@ var _ = require('lodash');
             }, true);
 
             $scope.$watch("form.departDate", function(){
+                var arrival = moment($scope.form.arrivalDate);
                 var depart = moment($scope.form.arrivalDate);
                 $scope.submit.ggf = depart.format('D');
                 $scope.submit.mmf = depart.format('M');
