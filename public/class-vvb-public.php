@@ -135,6 +135,8 @@ class Vvb_Public {
 	 */
 	public function add_dependencies() {
 
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-aec-public-shortcodes.php';
+
 	}
 
 }
