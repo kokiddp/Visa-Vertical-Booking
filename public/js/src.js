@@ -63,25 +63,35 @@ var _ = require('lodash');
                 aaf: 1970,
                 notti_1: 1,
                 tot_camere: 1,
-                notti_1: 1,
                 lingua_int: 'ita',
             }
 
+            $scope.$watch("form.rooms", function(){
+                $scope.submit.tot_camere = $scope.form.rooms.length;
+                $scope.submit.tot_adulti = _.sumBy($scope.form.rooms, function(r) { return r.adulti; });
+                $scope.submit.tot_bambini = _.sumBy($scope.form.rooms, function(r) { return r.bambini; });
+            }, true);
+
             $scope.$watch("form.arrivalDate", function(){
-                $scope.submit.gg = moment($scope.form.arrivalDate).format('D');
-                $scope.submit.mm = moment($scope.form.arrivalDate).format('M');
-                $scope.submit.aa = moment($scope.form.arrivalDate).format('YYYY');
+                var arrival = moment($scope.form.arrivalDate);
+                var depart = moment($scope.form.arrivalDate);
+                $scope.submit.gg = arrival.format('D');
+                $scope.submit.mm = arrival.format('M');
+                $scope.submit.aa = arrival.format('YYYY');
+                $scope.submit.notti_1 = depart.diff(arrival, 'days');
             }, true);
 
             $scope.$watch("form.departDate", function(){
-                $scope.submit.ggf = moment($scope.form.departDate).format('D');
-                $scope.submit.mmf = moment($scope.form.departDate).format('M');
-                $scope.submit.aaf = moment($scope.form.departDate).format('YYYY');
+                var depart = moment($scope.form.arrivalDate);
+                $scope.submit.ggf = depart.format('D');
+                $scope.submit.mmf = depart.format('M');
+                $scope.submit.aaf = depart.format('YYYY');
+                $scope.submit.notti_1 = depart.diff(arrival, 'days');
             }, true);
 
             $scope.addRoom = function(){
                 $scope.form.rooms.push({
-                    id: $scope.form.rooms[$scope.form.rooms.length-1].id+1,
+                    id: _.last($scope.form.rooms).id+1,
                     adulti: 2,
                     bambini: 0,
                     minAdulti: 1,
@@ -96,9 +106,7 @@ var _ = require('lodash');
             }
 
             $scope.submitForm = function(){
-                $scope.submit.tot_camere = $scope.form.rooms.length;
                 //TODO:
-                //-fai la conta
                 //-componi la querystring
                 //-apri pagina in blank
             }
