@@ -112,7 +112,7 @@ var _ = require('lodash');
                     minAdulti: 1,
                     maxAdulti: 5,
                     minBambini: 0,
-                    maxBambini: 4,
+                    maxBambini: 5,
                 });
             }
 
