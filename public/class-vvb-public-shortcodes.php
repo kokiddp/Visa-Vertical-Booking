@@ -79,9 +79,11 @@ class Vvb_Public_Shortcodes {
 					<select ng-model="x.adulti">
 						<option ng-repeat="n in [].constructor(5) track by $index+1" ng-selected="$index+1 == x.adulti">{{$index+1}}</option>
 					</select>
+					<span>{{x.adulti}}</span>
 					<select ng-model="x.bambini">
 						<option ng-repeat="n in [].constructor(5) track by $index+1" ng-selected="$index+1 == x.bambini">{{$index+1}}</option>
 					</select>
+					<span>{{x.bambini}}</span>
 				</div>
 
 				<input type="submit" ng-disabled="vvbForm.$invalid" value="<?= __( 'Submit', 'vvb' ) ?>" />
