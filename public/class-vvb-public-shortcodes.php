@@ -68,13 +68,14 @@ class Vvb_Public_Shortcodes {
 
 			<form name="vvbForm" novalidate>
 
-				<input type="date" ng-model="form.arrivalDate" name="">
+				<input type="date" ng-model="form.arrivalDate">
 
-				<input type="date" ng-model="form.departDate" name="">
+				<input type="date" ng-model="form.departDate">
 
 				<select ng-model="form.rooms">
 					<option ng-repeat="n in [].constructor(5) track by $index+1">{{$index+1}}</option>
 				</select>
+				<span>{{form.rooms}}</span>
 
 				<input type="submit" ng-disabled="vvbForm.$invalid" value="<?= __( 'Submit', 'vvb' ) ?>" />
 			</form>
