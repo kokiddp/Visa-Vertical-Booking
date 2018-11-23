@@ -76,8 +76,12 @@ class Vvb_Public_Shortcodes {
 				<input type="button" ng-click="removeRoom()" ng-disabled="form.rooms.length == 1" value="<?= __( 'Remove room', 'vvb' ) ?>" />
 				
 				<div ng-repeat="x in form.rooms">
-					<select ng-options="n in [].constructor(5) track by $index+1" ng-model="x.adulti"></select>
-					<select ng-options="n in [].constructor(5) track by $index+1" ng-model="x.bambini"></select>
+					<select ng-model="x.adulti">
+						<option ng-repeat="n in [].constructor(5) track by $index+1"></option>
+					</select>
+					<select ng-model="x.bambini">
+						<option ng-repeat="n in [].constructor(5) track by $index+1"></option>
+					</select>
 				</div>
 
 				<input type="submit" ng-disabled="vvbForm.$invalid" value="<?= __( 'Submit', 'vvb' ) ?>" />

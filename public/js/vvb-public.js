@@ -42059,13 +42059,11 @@ require('moment-timezone');
             $scope.form = {
                 arrivalDate: new Date(),
                 departDate: new Date(),
-                rooms: [
-                    {
-                        id: 1,
-                        adulti: 2,
-                        bambini: 0
-                    }
-                ],
+                rooms: [{
+                    id: 1,
+                    adulti: 2,
+                    bambini: 0
+                }],
             }
 
             $scope.submit = {
