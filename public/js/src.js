@@ -1,7 +1,6 @@
 require('angular');
 var moment = require('moment');
 require('moment/locale/it');
-require('moment-timezone');
 var _ = require('lodash');
 
 (function( $ ) {
@@ -28,10 +27,8 @@ var _ = require('lodash');
 
     app.controller('vvbController',[
         "$scope",
-        "$http",
-        "$httpParamSerializerJQLike",
         "$window",
-        function($scope,$http,$httpParamSerializerJQLike,$window) {
+        function($scope,$window) {
 
             $scope.form = {
                 arrivalDate: moment(new Date()).startOf('day').toDate(),

@@ -8,8 +8,7 @@
   "dependencies": {
     "angular": "^1.7.5",
     "lodash": "^4.17.11",
-    "moment": "^2.22.2",
-    "moment-timezone": "^0.5.23"
+    "moment": "^2.22.2"
   },
   "scripts": {
     "watch": "watchify src.js -o vvb-public.js -v",
