@@ -68,9 +68,9 @@ class Vvb_Public_Shortcodes {
 
 			<form name="vvbForm" novalidate>
 
-				<input type="form.arrivalDate" name="">
+				<input type="date" ng-model="form.arrivalDate" name="">
 
-				<input type="form.departDate" name="">
+				<input type="date" ng-model="form.departDate" name="">
 
 				<select ng-model="form.rooms" ng-options="n for n in [] | range:1:5"></select>
 
