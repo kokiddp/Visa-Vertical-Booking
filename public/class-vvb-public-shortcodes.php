@@ -20,12 +20,20 @@
 class Vvb_Public_Shortcodes {
 
 	/**
+	 * Undocumented variable
+	 *
+	 * @var [type]
+	 */
+	private $options;
+
+	/**
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		
+
+		$this->options = get_option( 'aec_options' );
 		$this::add_shortocdes();
 	}
 
@@ -40,6 +48,12 @@ class Vvb_Public_Shortcodes {
 
 	}
 
+	/**
+	 * Undocumented function
+	 *
+	 * @param [type] $atts
+	 * @return void
+	 */
 	public function vvb_display_form( $atts ){
 		$atts = shortcode_atts(
             array(),
@@ -52,7 +66,16 @@ class Vvb_Public_Shortcodes {
 
 		<div id="angular-app" ng-app="vvb" ng-controller="vvbController" ng-cloak ng-strict-di>
 
-			
+			<form name="vvbForm" novalidate>
+
+				<input type="form.arrivalDate" name="">
+
+				<input type="form.departDate" name="">
+
+				<select ng-model="form.rooms" ng-options="n for n in [] | range:1:5"></select>
+
+				<input type="submit" ng-disabled="vvbForm.$invalid" value="<?= __( 'Submit', 'vvb' ) ?>" />
+			</form>
 
 		</div>		
 
