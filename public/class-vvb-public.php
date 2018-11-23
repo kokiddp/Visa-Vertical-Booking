@@ -50,6 +50,15 @@ class Vvb_Public {
 	private $environment;
 
 	/**
+	 * Shortcodes class
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      Vvb_Public_Shortcodes		$shortcodes		Shortcodes class instance.
+	 */
+	private $shortcodes;
+
+	/**
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
@@ -63,6 +72,8 @@ class Vvb_Public {
 		$this->environment = $environment;
 
 		$this::add_dependencies();
+
+		$this->shortcodes = new Vvb_Public_Shortcodes();
 
 	}
 
