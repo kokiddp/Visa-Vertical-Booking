@@ -28,7 +28,11 @@ require('angular');
         "$window",
         function($scope,$http,$httpParamSerializerJQLike,$window) {
 
-            
+            $scope.form = {
+                arrivalDate = '',
+                departDate = '',
+                rooms = 1,
+            }
             
     }]);
     
