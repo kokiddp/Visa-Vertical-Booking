@@ -33,7 +33,7 @@ class Vvb_Public_Shortcodes {
 	 */
 	public function __construct() {
 
-		$this->options = get_option( 'aec_options' );
+		$this->options = get_option( 'vvb_options' );
 		$this::add_shortocdes();
 	}
 
