@@ -176,6 +176,11 @@ class Vvb {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
+		$options = new Vvb_Admin_Options();
+
+		$this->loader->add_action( 'admin_menu', $options, 'vvb_add_options_page' );
+		$this->loader->add_action( 'admin_init', $options, 'vvb_init_options' );
+
 	}
 
 	/**

@@ -119,6 +119,8 @@ class Vvb_Admin {
 	 */
 	public function add_dependencies() {
 
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-vvb-admin-options.php';
+
 	}
 
 }
