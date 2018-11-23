@@ -6,7 +6,9 @@
   "author": "Gabriele Coquillard",
   "license": "GPL-2.0-or-later",
   "dependencies": {
-    "angular": "^1.7.5"
+    "angular": "^1.7.5",
+    "moment": "^2.22.2",
+    "moment-timezone": "^0.5.23"
   },
   "scripts": {
     "watch": "watchify src.js -o vvb-public.js -v",
