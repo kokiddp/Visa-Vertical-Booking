@@ -84,10 +84,8 @@ var _ = require('lodash');
             $scope.$watch("form.arrivalDate", function(){
                 $scope.internal.arrival = moment($scope.form.arrivalDate);
                 $scope.internal.depart = moment($scope.form.departDate);
-                $scope.internal.minDepartDate = $scope.internal.arrival;
-                $scope.internal.maxDepartDate = $scope.internal.arrival;
-                $scope.internal.minDepartDate = $scope.internal.minDepartDate.add(1, 'd').toDate();
-                $scope.internal.maxDepartDate = $scope.internal.maxDepartDate.add(7, 'd').toDate();
+                $scope.internal.minDepartDate = moment($scope.internal.arrival.toDate()).add(1, 'd').toDate();
+                $scope.internal.maxDepartDate = moment($scope.internal.arrival.toDate()).add(7, 'd').toDate();
                 $scope.submit.gg = $scope.internal.arrival.format('D');
                 $scope.submit.mm = $scope.internal.arrival.format('M');
                 $scope.submit.aa = $scope.internal.arrival.format('YYYY');
