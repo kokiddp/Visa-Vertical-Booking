@@ -68,9 +68,13 @@ class Vvb_Public_Shortcodes {
 
 			<form name="vvbForm" ng-init="internal.url='<?= $this->options['url'] ?>';submit.id_albergo=<?= $this->options['id_albergo'] ?>;submit.id_stile=<?= $this->options['id_stile'] ?>;submit.dc=<?= $this->options['dc'] ?>" novalidate>
 
-				<input type="date" ng-model="form.arrivalDate" ng-min="{{internal.minArrivalDate}}" min="{{internal.minArrivalDate | date:'yyyy-MM-dd'}}">
+				<label><?= __( 'Arrival date', 'vvb' ) ?></label>
+				<input name="arrivalDate" type="date" ng-model="form.arrivalDate" ng-min="{{internal.minArrivalDate}}" min="{{internal.minArrivalDate | date:'yyyy-MM-dd'}}">
+				<label ng-if="vvbForm.arrivalDate.$invalid"><?= __( 'Invalid date!', 'vvb' ) ?></label>
 
-				<input type="date" ng-model="form.departDate" ng-min="{{internal.minDepartDate}}" min="{{internal.minDepartDate | date:'yyyy-MM-dd'}}">
+				<label><?= __( 'Departure date', 'vvb' ) ?></label>
+				<input name="departDate" type="date" ng-model="form.departDate" ng-min="{{internal.minDepartDate}}" min="{{internal.minDepartDate | date:'yyyy-MM-dd'}}">
+				<label ng-if="vvbForm.departDate.$invalid"><?= __( 'Invalid date!', 'vvb' ) ?></label>
 
 				<input type="button" ng-click="addRoom()" ng-disabled="form.rooms.length >= internal.maxRooms" value="<?= __( 'Add room', 'vvb' ) ?>" />
 				<input type="button" ng-click="removeRoom()" ng-disabled="form.rooms.length == 1" value="<?= __( 'Remove room', 'vvb' ) ?>" />
@@ -82,9 +86,8 @@ class Vvb_Public_Shortcodes {
 					<select ng-model="x.bambini" ng-options="n for n in [] | range:x.minBambini:(x.maxBambini - x.adulti + 1)"></select>
 				</div>
 
-				<div>{{submit | json}}</div>
-
 				<input type="submit" ng-click="submitForm()" ng-disabled="vvbForm.$invalid" value="<?= __( 'Submit', 'vvb' ) ?>" />
+				<label ng-if="vvbForm.$invalid"><?= __( 'There are one or more errors in your request. Please correct them before submitting.', 'vvb' ) ?></label>
 			</form>
 
 		</div>		
