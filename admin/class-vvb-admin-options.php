@@ -64,7 +64,9 @@ class Vvb_Admin_Options {
 		register_setting( 'vvb_options', 'vvb_options', array( $this, 'vvb_options_validate' ) );
 		
 		add_settings_section( 'vvb_main', __('Main Settings', 'vvb'), array( $this, 'vvb_main_section_text' ), 'vvb' );
-		add_settings_field( 'vvb_stub', __('Stub', 'vvb'), array( $this, 'vvb_setting_stub'), 'vvb', 'vvb_main' );
+		add_settings_field( 'vvb_id_albergo', __('ID Albergo', 'vvb'), array( $this, 'vvb_setting_id_albergo'), 'vvb', 'vvb_main' );
+		add_settings_field( 'vvb_id_stile', __('ID Stile', 'vvb'), array( $this, 'vvb_setting_id_stile'), 'vvb', 'vvb_main' );
+		add_settings_field( 'vvb_dc', __('DC', 'vvb'), array( $this, 'vvb_setting_dc'), 'vvb', 'vvb_main' );
 	}
 
 	/**
@@ -81,9 +83,29 @@ class Vvb_Admin_Options {
 	 *
 	 * @return void
 	 */
-	public function vvb_setting_stub() {
-		echo "<input type='text' id='vvb_stub' name='vvb_options[stub]' value='{$this->options['stub']}' />";
+	public function vvb_setting_id_albergo() {
+		echo "<input type='text' id='vvb_id_albergo' name='vvb_options[id_albergo]' value='{$this->options['id_albergo']}' />";
 	}
+
+	/**
+	 * Undocumented function
+	 *
+	 * @return void
+	 */
+	public function vvb_setting_id_stile() {
+		echo "<input type='text' id='vvb_id_stile' name='vvb_options[id_stile]' value='{$this->options['id_stile']}' />";
+	}
+
+	/**
+	 * Undocumented function
+	 *
+	 * @return void
+	 */
+	public function vvb_setting_dc() {
+		echo "<input type='text' id='vvb_dc' name='vvb_options[dc]' value='{$this->options['dc']}' />";
+	}
+
+
 
 	/**
 	 * Undocumented function
