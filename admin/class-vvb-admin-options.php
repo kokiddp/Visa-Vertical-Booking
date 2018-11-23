@@ -85,7 +85,7 @@ class Vvb_Admin_Options {
 	 * @return void
 	 */
 	public function vvb_setting_url() {
-		echo "<input type='text' id='vvb_url' name='vvb_options[url]' value='{$this->options['url']}' />";
+		echo "<input type='text' style='width:100%' id='vvb_url' name='vvb_options[url]' value='{$this->options['url']}' />";
 	}
 
 	/**

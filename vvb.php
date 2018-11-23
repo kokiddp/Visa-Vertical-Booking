@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       Visa Vertical Booking
  * Plugin URI:        http://www.visamultimedia.com/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       This plugin integrates a Vertical Booking reservation form.
  * Version:           1.0.0
  * Author:            Gabriele Coquillard
  * Author URI:        https://www.elk-lab.com
