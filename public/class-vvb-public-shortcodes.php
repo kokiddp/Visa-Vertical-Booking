@@ -72,17 +72,17 @@ class Vvb_Public_Shortcodes {
 					<div class="vvb_date vvb_date_arrival">
 						<label><?= __( 'Arrival date', 'visa-vertical-booking' ) ?></label>
 						<input name="arrivalDate" type="date" ng-model="form.arrivalDate" ng-min="{{internal.minArrivalDate}}" min="{{internal.minArrivalDate | date:'yyyy-MM-dd'}}">
-						<label ng-if="vvbForm.arrivalDate.$invalid"><?= __( 'Invalid date!', 'visa-vertical-booking' ) ?></label>
+						<label class="validation-error" ng-if="vvbForm.arrivalDate.$invalid"><?= __( 'Invalid date!', 'visa-vertical-booking' ) ?></label>
 					</div>
 					<div class="vvb_date vvb_date_depart">
 						<label><?= __( 'Departure date', 'visa-vertical-booking' ) ?></label>
 						<input name="departDate" type="date" ng-model="form.departDate" ng-min="{{internal.minDepartDate}}" min="{{internal.minDepartDate | date:'yyyy-MM-dd'}}">
-						<label ng-if="vvbForm.departDate.$invalid"><?= __( 'Invalid date!', 'visa-vertical-booking' ) ?></label>
+						<label class="validation-error" ng-if="vvbForm.departDate.$invalid"><?= __( 'Invalid date!', 'visa-vertical-booking' ) ?></label>
 					</div>
 				</div>
 
 				<div class="vvb_rooms_controls">
-					<span><?= __( 'Rooms: ', 'visa-vertical-booking' ) ?>{{form.rooms.length}}</span>
+					<label><?= __( 'Rooms: ', 'visa-vertical-booking' ) ?>{{form.rooms.length}}</label>
 					<input type="button" ng-click="addRoom()" ng-disabled="form.rooms.length >= internal.maxRooms" value="<?= __( '+', 'visa-vertical-booking' ) ?>" />
 					<input type="button" ng-click="removeRoom()" ng-disabled="form.rooms.length == 1" value="<?= __( '-', 'visa-vertical-booking' ) ?>" />
 				</div>
@@ -97,13 +97,14 @@ class Vvb_Public_Shortcodes {
 						<div ng-repeat="y in [] | range:1:(x.bambini + 1)">
 							<label><?= __( 'Child age ', 'visa-vertical-booking' ) ?>{{y}}</label>
 							<select ng-model="form.ages[x.id][y]" ng-options="n for n in [] | range:0:(internal.maxAgeChildren + 1)" ng-required="true"></select>
+							<label class="validation-error" ng-if="!form.ages[x.id][y]"><?= __( 'Select child age', 'visa-vertical-booking' ) ?></label>
 						</div>
 					</div>
 				</div>
 
 				<div class="vvb_submit">
 					<input type="submit" ng-click="submitForm()" ng-disabled="vvbForm.$invalid" value="<?= __( 'Submit', 'visa-vertical-booking' ) ?>" />
-					<label ng-if="vvbForm.$invalid"><?= __( 'There are one or more errors in your request. Please correct them before submitting.', 'visa-vertical-booking' ) ?></label>
+					<label class="validation-error" ng-if="vvbForm.$invalid"><?= __( 'There are one or more errors in your request. Please correct them before submitting.', 'visa-vertical-booking' ) ?></label>
 				</div>
 			</form>
 
