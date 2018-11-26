@@ -68,13 +68,14 @@
 {
     font-size: 18px;
     line-height: 30px;
-    width: 100%;
+    width: 3em;
     padding: 8px;
     border: 1px solid #666;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
     margin-right:10px;
+    display: inline-block;
 }
 #vvb .vvb_rooms_controls input[type=button]
 {
@@ -87,6 +88,7 @@
     -moz-transition: color 300ms ease 0ms,background-color 300ms ease 0ms;
     transition: color 300ms ease 0ms,background-color 300ms ease 0ms;
     margin-right:10px;
+    display: inline-block;
 }
 #vvb .vvb_rooms_controls input[type=button]:last-of-type{
     margin-right:0;
