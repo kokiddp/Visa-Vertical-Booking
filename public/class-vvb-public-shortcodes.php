@@ -96,7 +96,7 @@ class Vvb_Public_Shortcodes {
 						<select ng-model="x.bambini" ng-options="n for n in [] | range:x.minBambini:(x.maxBambini - x.adulti + 1)"></select>
 						<div ng-repeat="y in [] | range:1:(x.bambini + 1)">
 							<label><?= __( 'Child age ', 'visa-vertical-booking' ) ?>{{y}}</label>
-							<select ng-model="form.ages[x.id][y]" ng-options="n for n in [] | range:0:(internal.maxAgeChildren + 1)" ng-init="form.ages[x.id][y] = 0" ng-required="true"></select>
+							<select ng-model="form.ages[x.id][y]" ng-options="n for n in [] | range:0:(internal.maxAgeChildren + 1)" ng-init="form.ages[x.id][y] = number:0" ng-required="true"></select>
 							<label class="validation-error" ng-if="!form.ages[x.id][y]"><?= __( 'Select child age', 'visa-vertical-booking' ) ?></label>
 						</div>
 					</div>
