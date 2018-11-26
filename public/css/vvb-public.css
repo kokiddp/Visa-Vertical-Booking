@@ -214,11 +214,12 @@
     {
         width: 100%;
     }
+    #vvb .vvb_rooms .vvb_room .people,
     #vvb .vvb_rooms .vvb_room .age
-{
-    display: inline-block;
-    width: -webkit-calc(100% / 2);
-    width: -moz-calc(100% / 2);
-    width: calc(100% / 2);
-}
+    {
+        display: inline-block;
+        width: -webkit-calc(100% / 2);
+        width: -moz-calc(100% / 2);
+        width: calc(100% / 2);
+    }
 }
