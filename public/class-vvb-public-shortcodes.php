@@ -64,9 +64,9 @@ class Vvb_Public_Shortcodes {
 		ob_start();
 		?>
 
-		<div id="vvb" ng-app="vvb" ng-controller="vvbController" ng-cloak ng-strict-di>
+		<div id="vvb" ng-app="vvb" ng-controller="vvbController" ng-init="internal.url='<?= $this->options['url'] ?>';submit.id_albergo=<?= $this->options['id_albergo'] ?>;submit.id_stile=<?= $this->options['id_stile'] ?>;submit.dc=<?= $this->options['dc'] ?>;internal.minNights=<?= $this->options['min_nights'] ?>;internal.maxRooms=<?= $this->options['max_rooms'] ?>;internal.maxPeople=<?= $this->options['max_people'] ?>;internal.defaultAdults=<?= $this->options['default_adults'] ?>;internal.minAdultsFirstRoom=<?= $this->options['min_adults_first_room'] ?>;internal.minAdultsOtherRooms=<?= $this->options['min_adults_other_rooms'] ?>;internal.maxAgeChildren=<?= $this->options['max_age_children'] ?>;" ng-cloak ng-strict-di>
 
-			<form name="vvbForm" ng-init="internal.url='<?= $this->options['url'] ?>';submit.id_albergo=<?= $this->options['id_albergo'] ?>;submit.id_stile=<?= $this->options['id_stile'] ?>;submit.dc=<?= $this->options['dc'] ?>;internal.minNights=<?= $this->options['min_nights'] ?>;internal.maxRooms=<?= $this->options['max_rooms'] ?>;internal.maxPeople=<?= $this->options['max_people'] ?>;internal.defaultAdults=<?= $this->options['default_adults'] ?>;internal.minAdultsFirstRoom=<?= $this->options['min_adults_first_room'] ?>;internal.minAdultsOtherRooms=<?= $this->options['min_adults_other_rooms'] ?>;internal.maxAgeChildren=<?= $this->options['max_age_children'] ?>;" novalidate>
+			<form name="vvbForm" novalidate>
 
 				<div class="vvb_dates">
 					<div class="vvb_date vvb_date_arrival">
