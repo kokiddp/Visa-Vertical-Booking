@@ -81,6 +81,7 @@
 }
 #vvb .vvb_rooms_controls input[type=button]
 {
+    border: 1px solid #666666;
     font-size: 20px;
     font-weight: 500;
     line-height: 1.7em;
@@ -176,6 +177,7 @@
 }
 #vvb .vvb_submit input[type=submit]
 {
+    border: 1px solid #666666;
     font-size: 20px;
     font-weight: 500;
     line-height: 1.7em;
