@@ -57977,6 +57977,7 @@ var _ = require('lodash');
                     minBambini: 0,
                     maxBambini: $scope.internal.maxPeople,
                 }],
+                ages: [],
             }
 
             $scope.submit = {

@@ -99,7 +99,7 @@ class Vvb_Public_Shortcodes {
 					<select ng-model="x.bambini" ng-options="n for n in [] | range:x.minBambini:(x.maxBambini - x.adulti + 1)"></select>{{x.bambini}}
 					<div ng-repeat="y in [] | range:1:(x.bambini + 1)">
 						<label><?= __( 'Child age', 'vvb' ) ?></label>
-						<select ng-model="y.eta" ng-options="n for n in [] | range:0:(internal.maxAgeChildren + 1)"></select>
+						<select ng-model="form.ages[x.id][y]" ng-options="n for n in [] | range:0:(internal.maxAgeChildren + 1)"></select>
 					</div>
 				</div>
 
