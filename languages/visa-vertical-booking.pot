@@ -1,0 +1,151 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Visa Vertical Booking\n"
+"POT-Creation-Date: 2018-11-26 12:17+0100\n"
+"PO-Revision-Date: 2018-11-26 12:17+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: vvb.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#. Plugin Name of the plugin/theme
+#: admin/class-vvb-admin-options.php:46 admin/partials/vvb-admin-display.php:19
+msgid "Visa Vertical Booking"
+msgstr ""
+
+#: admin/class-vvb-admin-options.php:66
+msgid "Main Settings"
+msgstr ""
+
+#: admin/class-vvb-admin-options.php:67
+msgid "URL base"
+msgstr ""
+
+#: admin/class-vvb-admin-options.php:68
+msgid "ID Albergo"
+msgstr ""
+
+#: admin/class-vvb-admin-options.php:69
+msgid "ID Stile"
+msgstr ""
+
+#: admin/class-vvb-admin-options.php:70
+msgid "DC"
+msgstr ""
+
+#: admin/class-vvb-admin-options.php:72
+msgid "Configuration Settings"
+msgstr ""
+
+#: admin/class-vvb-admin-options.php:73
+msgid "Minimum nights stay"
+msgstr ""
+
+#: admin/class-vvb-admin-options.php:74
+msgid "Maximum bookable rooms"
+msgstr ""
+
+#: admin/class-vvb-admin-options.php:75
+msgid "Maximum people per room"
+msgstr ""
+
+#: admin/class-vvb-admin-options.php:76
+msgid "Default adults per room"
+msgstr ""
+
+#: admin/class-vvb-admin-options.php:77
+msgid "Minimum adults in first room"
+msgstr ""
+
+#: admin/class-vvb-admin-options.php:78
+msgid "Minimum adults in other rooms"
+msgstr ""
+
+#: admin/class-vvb-admin-options.php:79
+msgid "Maximum age for children"
+msgstr ""
+
+#: admin/class-vvb-admin-options.php:88
+msgid "Theese are the general settings"
+msgstr ""
+
+#: admin/class-vvb-admin-options.php:133
+msgid "Theese are the configuration settings"
+msgstr ""
+
+#: public/class-vvb-public-shortcodes.php:73
+msgid "Arrival date"
+msgstr ""
+
+#: public/class-vvb-public-shortcodes.php:75
+#: public/class-vvb-public-shortcodes.php:80
+msgid "Invalid date!"
+msgstr ""
+
+#: public/class-vvb-public-shortcodes.php:78
+msgid "Departure date"
+msgstr ""
+
+#: public/class-vvb-public-shortcodes.php:85
+msgid "Rooms: "
+msgstr ""
+
+#: public/class-vvb-public-shortcodes.php:86
+msgid "+"
+msgstr ""
+
+#: public/class-vvb-public-shortcodes.php:87
+msgid "-"
+msgstr ""
+
+#: public/class-vvb-public-shortcodes.php:92
+msgid "Room "
+msgstr ""
+
+#: public/class-vvb-public-shortcodes.php:93
+msgid "Adults"
+msgstr ""
+
+#: public/class-vvb-public-shortcodes.php:95
+msgid "Children"
+msgstr ""
+
+#: public/class-vvb-public-shortcodes.php:98
+msgid "Child age "
+msgstr ""
+
+#: public/class-vvb-public-shortcodes.php:105
+msgid "Submit"
+msgstr ""
+
+#: public/class-vvb-public-shortcodes.php:106
+msgid ""
+"There are one or more errors in your request. Please correct them before "
+"submitting."
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "http://www.visamultimedia.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "This plugin integrates a Vertical Booking reservation form."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "VisaMultimedia"
+msgstr ""

@@ -17,8 +17,8 @@
  * Plugin URI:        http://www.visamultimedia.com/
  * Description:       This plugin integrates a Vertical Booking reservation form.
  * Version:           1.0.0
- * Author:            Gabriele Coquillard
- * Author URI:        https://www.elk-lab.com
+ * Author:            VisaMultimedia
+ * Author URI:        http://www.visamultimedia.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       visa-vertical-booking
