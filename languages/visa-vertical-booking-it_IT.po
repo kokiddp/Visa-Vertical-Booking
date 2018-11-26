@@ -3,7 +3,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Project-Id-Version: Visa Vertical Booking\n"
 "POT-Creation-Date: 2018-11-26 12:17+0100\n"
-"PO-Revision-Date: 2018-11-26 12:21+0100\n"
+"PO-Revision-Date: 2018-11-26 12:24+0100\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -101,7 +101,7 @@ msgstr "Data di partenza"
 
 #: public/class-vvb-public-shortcodes.php:85
 msgid "Rooms: "
-msgstr "Stanze: "
+msgstr "Camere: "
 
 #: public/class-vvb-public-shortcodes.php:86
 msgid "+"
@@ -113,7 +113,7 @@ msgstr "-"
 
 #: public/class-vvb-public-shortcodes.php:92
 msgid "Room "
-msgstr "Camera"
+msgstr "Camera "
 
 #: public/class-vvb-public-shortcodes.php:93
 msgid "Adults"
@@ -125,7 +125,7 @@ msgstr "Bambini"
 
 #: public/class-vvb-public-shortcodes.php:98
 msgid "Child age "
-msgstr "Età bambino"
+msgstr "Età bambino "
 
 #: public/class-vvb-public-shortcodes.php:105
 msgid "Submit"
