@@ -142,12 +142,12 @@
 #vvb .vvb_rooms .vvb_room .ages
 {
     display: inline-block;
-    width: -webkit-calc(-webkit-calc(100% / 3) * 2);
-    width: -moz-calc(-moz-calc(100% / 3) * 2);
-    width: calc(calc(100% / 3) * 2);
-    width: -webkit-calc((100% / 3) * 2);
-    width: -moz-calc((100% / 3) * 2);
-    width: calc((100% / 3) * 2);
+    width: -webkit-calc(-webkit-calc(-webkit-calc(100% / 3) * 2) - 4px);
+    width: -moz-calc(-moz-calc(-moz-calc(100% / 3) * 2) - 4px);
+    width: calc(calc(calc(100% / 3) * 2) - 4px);
+    width: -webkit-calc(((100% / 3) * 2) - 4px);
+    width: -moz-calc(((100% / 3) * 2) - 4px);
+    width: calc(((100% / 3) * 2) - 4px);
 }
 #vvb .vvb_rooms .vvb_room .age
 {
