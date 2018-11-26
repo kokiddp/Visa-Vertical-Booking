@@ -68,6 +68,15 @@ class Vvb_Admin_Options {
 		add_settings_field( 'vvb_id_albergo', __('ID Albergo', 'vvb'), array( $this, 'vvb_setting_id_albergo'), 'vvb', 'vvb_main' );
 		add_settings_field( 'vvb_id_stile', __('ID Stile', 'vvb'), array( $this, 'vvb_setting_id_stile'), 'vvb', 'vvb_main' );
 		add_settings_field( 'vvb_dc', __('DC', 'vvb'), array( $this, 'vvb_setting_dc'), 'vvb', 'vvb_main' );
+
+		add_settings_section( 'vvb_config', __('Configuration Settings', 'vvb'), array( $this, 'vvb_config_section_text' ), 'vvb' );
+		add_settings_field( 'vvb_min_nights', __('Minimum nights stay', 'vvb'), array( $this, 'vvb_setting_min_nights'), 'vvb', 'vvb_config' );
+		add_settings_field( 'vvb_max_rooms', __('Maximum bookable rooms', 'vvb'), array( $this, 'vvb_setting_max_rooms'), 'vvb', 'vvb_config' );
+		add_settings_field( 'vvb_max_people', __('Maximum people per room', 'vvb'), array( $this, 'vvb_setting_max_people'), 'vvb', 'vvb_config' );
+		add_settings_field( 'vvb_default_adults', __('Default adults per room', 'vvb'), array( $this, 'vvb_setting_default_adults'), 'vvb', 'vvb_config' );
+		add_settings_field( 'vvb_min_adults_first_room', __('Minimum adults in first room', 'vvb'), array( $this, 'vvb_setting_min_adults_first_room'), 'vvb', 'vvb_config' );
+		add_settings_field( 'vvb_min_adults_other_rooms', __('Minimum adults in other rooms', 'vvb'), array( $this, 'vvb_setting_min_adults_other_rooms'), 'vvb', 'vvb_config' );
+		add_settings_field( 'vvb_max_age_children', __('Maximum age for children', 'vvb'), array( $this, 'vvb_setting_max_age_children'), 'vvb', 'vvb_config' );
 	}
 
 	/**
@@ -115,7 +124,77 @@ class Vvb_Admin_Options {
 		echo "<input type='text' id='vvb_dc' name='vvb_options[dc]' value='{$this->options['dc']}' />";
 	}
 
+	/**
+	 * Undocumented function
+	 *
+	 * @return void
+	 */
+	function vvb_config_section_text() {
+		echo '<p>' . __('Theese are the configuration settings', 'vvb') . '</p>';
+	}
 
+	/**
+	 * Undocumented function
+	 *
+	 * @return void
+	 */
+	public function vvb_setting_min_nights() {
+		echo "<input type='number' step='1' min='1' id='vvb_min_nights' name='vvb_options[min_nights]' value='{$this->options['min_nights']}' />";
+	}
+
+	/**
+	 * Undocumented function
+	 *
+	 * @return void
+	 */
+	public function vvb_setting_max_rooms() {
+		echo "<input type='number' step='1' min='1' id='vvb_max_rooms' name='vvb_options[max_rooms]' value='{$this->options['max_rooms']}' />";
+	}
+
+	/**
+	 * Undocumented function
+	 *
+	 * @return void
+	 */
+	public function vvb_setting_max_people() {
+		echo "<input type='number' step='1' min='1' id='vvb_max_people' name='vvb_options[max_people]' value='{$this->options['max_people']}' />";
+	}
+
+	/**
+	 * Undocumented function
+	 *
+	 * @return void
+	 */
+	public function vvb_setting_default_adults() {
+		echo "<input type='number' step='1' min='1' id='vvb_default_adults' name='vvb_options[default_adults]' value='{$this->options['default_adults']}' />";
+	}
+
+	/**
+	 * Undocumented function
+	 *
+	 * @return void
+	 */
+	public function vvb_setting_min_adults_first_room() {
+		echo "<input type='number' step='1' min='1' id='vvb_min_adults_first_room' name='vvb_options[min_adults_first_room]' value='{$this->options['min_adults_first_room']}' />";
+	}
+
+	/**
+	 * Undocumented function
+	 *
+	 * @return void
+	 */
+	public function vvb_setting_min_adults_other_rooms() {
+		echo "<input type='number' step='1' min='1' id='vvb_min_adults_other_rooms' name='vvb_options[min_adults_other_rooms]' value='{$this->options['min_adults_other_rooms']}' />";
+	}
+
+	/**
+	 * Undocumented function
+	 *
+	 * @return void
+	 */
+	public function vvb_setting_max_age_children() {
+		echo "<input type='number' step='1' min='1' max='17' id='vvb_max_age_children' name='vvb_options[max_age_children]' value='{$this->options['max_age_children']}' />";
+	}
 
 	/**
 	 * Undocumented function
