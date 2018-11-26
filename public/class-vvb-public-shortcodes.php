@@ -82,9 +82,10 @@ class Vvb_Public_Shortcodes {
 				</div>
 
 				<div class="vvb_rooms_controls">
-					<label><?= __( 'Rooms: ', 'visa-vertical-booking' ) ?>{{form.rooms.length}}</label>
-					<input type="button" ng-click="addRoom()" ng-disabled="form.rooms.length >= internal.maxRooms" value="<?= __( '+', 'visa-vertical-booking' ) ?>" />
+					<label><?= __( 'Rooms', 'visa-vertical-booking' ) ?></label>
 					<input type="button" ng-click="removeRoom()" ng-disabled="form.rooms.length == 1" value="<?= __( '-', 'visa-vertical-booking' ) ?>" />
+					<input type="text" name="totalRooms" value="{{form.rooms.length}}"/>
+					<input type="button" ng-click="addRoom()" ng-disabled="form.rooms.length >= internal.maxRooms" value="<?= __( '+', 'visa-vertical-booking' ) ?>" />					
 				</div>
 
 				<div class="vvb_rooms">
