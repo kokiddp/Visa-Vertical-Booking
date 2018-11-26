@@ -43,7 +43,7 @@ class Vvb_Admin_Options {
 	 * @return void
 	 */
 	public function vvb_add_options_page() {
-		add_options_page( 'Visa Vertical Booking', 'Visa Vertical Booking', 'manage_options', 'vvb', array( $this, 'vvb_options_page' ) );
+		add_options_page( __('Visa Vertical Booking', 'visa-vertical-booking'), __('Visa Vertical Booking', 'visa-vertical-booking'), 'manage_options', 'vvb', array( $this, 'vvb_options_page' ) );
 	}
 
 	/**
@@ -63,20 +63,20 @@ class Vvb_Admin_Options {
 	public function vvb_init_options() {
 		register_setting( 'vvb_options', 'vvb_options', array( $this, 'vvb_options_validate' ) );
 		
-		add_settings_section( 'vvb_main', __('Main Settings', 'vvb'), array( $this, 'vvb_main_section_text' ), 'vvb' );
-		add_settings_field( 'vvb_url', __('URL base', 'vvb'), array( $this, 'vvb_setting_url'), 'vvb', 'vvb_main' );
-		add_settings_field( 'vvb_id_albergo', __('ID Albergo', 'vvb'), array( $this, 'vvb_setting_id_albergo'), 'vvb', 'vvb_main' );
-		add_settings_field( 'vvb_id_stile', __('ID Stile', 'vvb'), array( $this, 'vvb_setting_id_stile'), 'vvb', 'vvb_main' );
-		add_settings_field( 'vvb_dc', __('DC', 'vvb'), array( $this, 'vvb_setting_dc'), 'vvb', 'vvb_main' );
+		add_settings_section( 'vvb_main', __('Main Settings', 'visa-vertical-booking'), array( $this, 'vvb_main_section_text' ), 'vvb' );
+		add_settings_field( 'vvb_url', __('URL base', 'visa-vertical-booking'), array( $this, 'vvb_setting_url'), 'vvb', 'vvb_main' );
+		add_settings_field( 'vvb_id_albergo', __('ID Albergo', 'visa-vertical-booking'), array( $this, 'vvb_setting_id_albergo'), 'vvb', 'vvb_main' );
+		add_settings_field( 'vvb_id_stile', __('ID Stile', 'visa-vertical-booking'), array( $this, 'vvb_setting_id_stile'), 'vvb', 'vvb_main' );
+		add_settings_field( 'vvb_dc', __('DC', 'visa-vertical-booking'), array( $this, 'vvb_setting_dc'), 'vvb', 'vvb_main' );
 
-		add_settings_section( 'vvb_config', __('Configuration Settings', 'vvb'), array( $this, 'vvb_config_section_text' ), 'vvb' );
-		add_settings_field( 'vvb_min_nights', __('Minimum nights stay', 'vvb'), array( $this, 'vvb_setting_min_nights'), 'vvb', 'vvb_config' );
-		add_settings_field( 'vvb_max_rooms', __('Maximum bookable rooms', 'vvb'), array( $this, 'vvb_setting_max_rooms'), 'vvb', 'vvb_config' );
-		add_settings_field( 'vvb_max_people', __('Maximum people per room', 'vvb'), array( $this, 'vvb_setting_max_people'), 'vvb', 'vvb_config' );
-		add_settings_field( 'vvb_default_adults', __('Default adults per room', 'vvb'), array( $this, 'vvb_setting_default_adults'), 'vvb', 'vvb_config' );
-		add_settings_field( 'vvb_min_adults_first_room', __('Minimum adults in first room', 'vvb'), array( $this, 'vvb_setting_min_adults_first_room'), 'vvb', 'vvb_config' );
-		add_settings_field( 'vvb_min_adults_other_rooms', __('Minimum adults in other rooms', 'vvb'), array( $this, 'vvb_setting_min_adults_other_rooms'), 'vvb', 'vvb_config' );
-		add_settings_field( 'vvb_max_age_children', __('Maximum age for children', 'vvb'), array( $this, 'vvb_setting_max_age_children'), 'vvb', 'vvb_config' );
+		add_settings_section( 'vvb_config', __('Configuration Settings', 'visa-vertical-booking'), array( $this, 'vvb_config_section_text' ), 'vvb' );
+		add_settings_field( 'vvb_min_nights', __('Minimum nights stay', 'visa-vertical-booking'), array( $this, 'vvb_setting_min_nights'), 'vvb', 'vvb_config' );
+		add_settings_field( 'vvb_max_rooms', __('Maximum bookable rooms', 'visa-vertical-booking'), array( $this, 'vvb_setting_max_rooms'), 'vvb', 'vvb_config' );
+		add_settings_field( 'vvb_max_people', __('Maximum people per room', 'visa-vertical-booking'), array( $this, 'vvb_setting_max_people'), 'vvb', 'vvb_config' );
+		add_settings_field( 'vvb_default_adults', __('Default adults per room', 'visa-vertical-booking'), array( $this, 'vvb_setting_default_adults'), 'vvb', 'vvb_config' );
+		add_settings_field( 'vvb_min_adults_first_room', __('Minimum adults in first room', 'visa-vertical-booking'), array( $this, 'vvb_setting_min_adults_first_room'), 'vvb', 'vvb_config' );
+		add_settings_field( 'vvb_min_adults_other_rooms', __('Minimum adults in other rooms', 'visa-vertical-booking'), array( $this, 'vvb_setting_min_adults_other_rooms'), 'vvb', 'vvb_config' );
+		add_settings_field( 'vvb_max_age_children', __('Maximum age for children', 'visa-vertical-booking'), array( $this, 'vvb_setting_max_age_children'), 'vvb', 'vvb_config' );
 	}
 
 	/**
@@ -85,7 +85,7 @@ class Vvb_Admin_Options {
 	 * @return void
 	 */
 	function vvb_main_section_text() {
-		echo '<p>' . __('Theese are the general settings', 'vvb') . '</p>';
+		echo '<p>' . __('Theese are the general settings', 'visa-vertical-booking') . '</p>';
 	}
 
 	/**
@@ -130,7 +130,7 @@ class Vvb_Admin_Options {
 	 * @return void
 	 */
 	function vvb_config_section_text() {
-		echo '<p>' . __('Theese are the configuration settings', 'vvb') . '</p>';
+		echo '<p>' . __('Theese are the configuration settings', 'visa-vertical-booking') . '</p>';
 	}
 
 	/**

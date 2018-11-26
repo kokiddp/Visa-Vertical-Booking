@@ -16,7 +16,7 @@
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 
 <div class="wrap">
-    <h1><?= __('Visa Vertical Booking', 'vvb') ?></h1>
+    <h1><?= __('Visa Vertical Booking', 'visa-vertical-booking') ?></h1>
 
     <form method="post" action="options.php">
         <?php settings_fields('vvb_options'); ?>
