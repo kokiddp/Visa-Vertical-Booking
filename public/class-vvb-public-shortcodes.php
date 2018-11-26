@@ -76,8 +76,9 @@ class Vvb_Public_Shortcodes {
 				<input name="departDate" type="date" ng-model="form.departDate" ng-min="{{internal.minDepartDate}}" min="{{internal.minDepartDate | date:'yyyy-MM-dd'}}">
 				<label ng-if="vvbForm.departDate.$invalid"><?= __( 'Invalid date!', 'vvb' ) ?></label>
 
-				<input type="button" ng-click="addRoom()" ng-disabled="form.rooms.length >= internal.maxRooms" value="<?= __( 'Add room', 'vvb' ) ?>" />
-				<input type="button" ng-click="removeRoom()" ng-disabled="form.rooms.length == 1" value="<?= __( 'Remove room', 'vvb' ) ?>" />
+				<span><?= __( 'Rooms: ', 'vvb' ) ?>{{form.rooms.length}}</span>
+				<input type="button" ng-click="addRoom()" ng-disabled="form.rooms.length >= internal.maxRooms" value="<?= __( '+', 'vvb' ) ?>" />
+				<input type="button" ng-click="removeRoom()" ng-disabled="form.rooms.length == 1" value="<?= __( '-', 'vvb' ) ?>" />
 
 				<div ng-repeat="x in form.rooms">
 					<label><?= __( 'Adults', 'vvb' ) ?></label>
