@@ -121,7 +121,8 @@
 #vvb .vvb_rooms .vvb_room .people .adults,
 #vvb .vvb_rooms .vvb_room .people .children
 {
-    width:50%;
+    width:49%;
+    display:inline-block;
 }
 #vvb .vvb_rooms .vvb_room .people select
 {
@@ -138,7 +139,24 @@
     -moz-appearance: none;
     appearance: none;
 }
-#vvb .vvb_rooms .vvb_room .ages select
+#vvb .vvb_rooms .vvb_room .ages
+{
+    display: inline-block;
+    width: -webkit-calc(-webkit-calc(100% / 3) * 2);
+    width: -moz-calc(-moz-calc(100% / 3) * 2);
+    width: calc(calc(100% / 3) * 2);
+    width: -webkit-calc((100% / 3) * 2);
+    width: -moz-calc((100% / 3) * 2);
+    width: calc((100% / 3) * 2);
+}
+#vvb .vvb_rooms .vvb_room .age
+{
+    display: inline-block;
+    width: -webkit-calc(100% / 4);
+    width: -moz-calc(100% / 4);
+    width: calc(100% / 4);
+}
+#vvb .vvb_rooms .vvb_room .ages .age select
 {
     font-size: 18px;
     line-height: 30px;
