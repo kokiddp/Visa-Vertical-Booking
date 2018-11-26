@@ -57951,12 +57951,12 @@ var _ = require('lodash');
                 departDate: moment(new Date()).startOf('day').add(1, 'd').toDate(),
                 rooms: [{
                     id: 1,
-                    adulti: 2,
+                    adulti: $scope.internal.defaultAdults,
                     bambini: 0,
-                    minAdulti: 1,
-                    maxAdulti: 5,
+                    minAdulti: $scope.internal.minAdultsFirstRoom,
+                    maxAdulti: $scope.internal.maxPeople,
                     minBambini: 0,
-                    maxBambini: 5
+                    maxBambini: $scope.internal.maxPeople
                 }],
             }
 
@@ -58001,7 +58001,7 @@ var _ = require('lodash');
             $scope.$watch("form.arrivalDate", function(){
                 $scope.internal.arrival = moment($scope.form.arrivalDate).startOf('day');
                 $scope.internal.depart = moment($scope.form.departDate).startOf('day');
-                $scope.internal.minDepartDate = moment($scope.internal.arrival.toDate()).add(1, 'd').toDate();
+                $scope.internal.minDepartDate = moment($scope.internal.arrival.toDate()).add(parseInt($scope.internal.minNights), 'd').toDate();
                 $scope.submit.gg = $scope.internal.arrival.format('D');
                 $scope.submit.mm = $scope.internal.arrival.format('M');
                 $scope.submit.aa = $scope.internal.arrival.format('YYYY');
@@ -58020,12 +58020,12 @@ var _ = require('lodash');
             $scope.addRoom = function(){
                 $scope.form.rooms.push({
                     id: _.last($scope.form.rooms).id+1,
-                    adulti: 2,
+                    adulti: $scope.internal.defaultAdults,
                     bambini: 0,
-                    minAdulti: 1,
-                    maxAdulti: 5,
+                    minAdulti: $scope.internal.minAdultsOtherRooms,
+                    maxAdulti: $scope.internal.maxPeople,
                     minBambini: 0,
-                    maxBambini: 5,
+                    maxBambini: $scope.internal.maxPeople,
                 });
             }
 
