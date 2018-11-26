@@ -89,7 +89,18 @@ var _ = require('lodash');
                 _.forEach($scope.form.rooms, function(value){
                     _.set($scope.submit, 'adulti' + value.id, value.adulti);
                     _.set($scope.submit, 'bambini' + value.id, value.bambini);
-                })
+                });
+            }, true);
+
+            $scope.$watch("form.ages", function(){
+                debugger;
+                _.forEach($scope.form.ages, function(value, key){
+                    debugger;
+                    _.forEach(value, function(value2, key2){
+                        debugger;
+                        _.set($scope.submit, 'st' + key + 'bamb' + key2, value2);
+                    });
+                });
             }, true);
 
             $scope.$watch("form.arrivalDate", function(){
