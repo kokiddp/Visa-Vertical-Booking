@@ -96,7 +96,12 @@ class Vvb_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/vvb-public.css', array(), /*$this->version*/time(), 'all' );
+		if ( $this->environment == 'production' ) {
+			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/vvb-public.min.css', array(), $this->version, 'all' );
+		}
+		else {
+			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/vvb-public.css', array(), time(), 'all' );
+		}
 
 	}
 
