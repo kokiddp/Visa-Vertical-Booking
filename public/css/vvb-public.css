@@ -207,8 +207,18 @@
     {
         margin-right: 0;
     }
-    #vvb .vvb_rooms_controls
+    #vvb .vvb_rooms_controls,
+    #vvb .vvb_rooms .vvb_room .people .adults,
+    #vvb .vvb_rooms .vvb_room .people .children,
+    #vvb .vvb_rooms .vvb_room .ages
     {
         width: 100%;
     }
+    #vvb .vvb_rooms .vvb_room .age
+{
+    display: inline-block;
+    width: -webkit-calc(100% / 2);
+    width: -moz-calc(100% / 2);
+    width: calc(100% / 2);
+}
 }
