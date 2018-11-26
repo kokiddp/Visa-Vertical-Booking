@@ -118,6 +118,8 @@
     font-weight: bold;
     margin-right: 20px;
     border-bottom: 1px solid #666666;
+    display: block;
+    margin-bottom: 10px;
 }
 #vvb .vvb_rooms .vvb_room .people .adults,
 #vvb .vvb_rooms .vvb_room .people .children
