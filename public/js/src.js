@@ -31,13 +31,19 @@ var _ = require('lodash');
         function($scope,$window) {
 
             $scope.internal = {
+                minNights: 1,
+                maxRooms: 5,
+                maxPeople: 5,
+                defaultAdults: 2,
+                minAdultsFirstRoom: 1,
+                minAdultsOtherRooms: 1,
+                maxAgeChildren: 17,
                 minArrivalDate: moment(new Date()).startOf('day').toDate(),
                 minDepartDate: moment(new Date()).startOf('day').add(parseInt($scope.internal.minNights), 'd').toDate(),
                 arrival: moment($scope.internal.minArrivalDate).startOf('day'),
                 depart: moment($scope.internal.minDepartDate).startOf('day'),
                 url: '',
-                queryString: '',
-                maxRooms: 5
+                queryString: '',                
             }
 
             $scope.form = {
@@ -50,7 +56,7 @@ var _ = require('lodash');
                     minAdulti: $scope.internal.minAdultsFirstRoom,
                     maxAdulti: $scope.internal.maxPeople,
                     minBambini: 0,
-                    maxBambini: $scope.internal.maxPeople
+                    maxBambini: $scope.internal.maxPeople,
                 }],
             }
 
@@ -70,16 +76,6 @@ var _ = require('lodash');
                 notti_1: 1,
                 tot_camere: 1,
                 lingua_int: 'ita',
-            }
-
-            $scope.internal = {
-                minArrivalDate: moment(new Date()).startOf('day').toDate(),
-                minDepartDate: moment(new Date()).startOf('day').add(parseInt($scope.internal.minNights), 'd').toDate(),
-                arrival: moment($scope.form.arrivalDate).startOf('day'),
-                depart: moment($scope.form.departDate).startOf('day'),
-                url: '',
-                queryString: '',
-                maxRooms: 5
             }
 
             $scope.$watch("form.rooms", function(){
