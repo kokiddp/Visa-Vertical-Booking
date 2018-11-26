@@ -1,6 +1,7 @@
 #vvb
 {
     max-width: 1200px;
+    margin:auto;
 }
 #vvb label
 {
@@ -64,7 +65,8 @@
 {
     display: block;
 }
-#vvb .vvb_rooms_controls input[type=number]
+#vvb .vvb_rooms_controls input[type=number],
+#vvb .vvb_rooms_controls input[type=text]
 {
     font-size: 18px;
     line-height: 30px;
