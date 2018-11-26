@@ -71,13 +71,13 @@ class Vvb_Public_Shortcodes {
 				submit.id_albergo=<?= $this->options['id_albergo'] ?>;
 				submit.id_stile=<?= $this->options['id_stile'] ?>;
 				submit.dc=<?= $this->options['dc'] ?>;
-				internal.minNights='<?= $this->options['min_nights'] ?>';
-				internal.maxRooms='<?= $this->options['max_rooms'] ?>';
-				internal.maxPeople='<?= $this->options['max_people'] ?>';
-				internal.defaultAdults='<?= $this->options['default_adults'] ?>';
-				internal.minAdultsFirstRoom='<?= $this->options['min_adults_first_room'] ?>';
-				internal.minAdultsOtherRooms='<?= $this->options['min_adults_other_rooms'] ?>';
-				internal.maxAgeChildren='<?= $this->options['max_age_children'] ?>';
+				internal.minNights=parseInt(<?= $this->options['min_nights'] ?>);
+				internal.maxRooms=parseInt(<?= $this->options['max_rooms'] ?>);
+				internal.maxPeople=parseInt(<?= $this->options['max_people'] ?>);
+				internal.defaultAdults=parseInt(<?= $this->options['default_adults'] ?>);
+				internal.minAdultsFirstRoom=parseInt(<?= $this->options['min_adults_first_room'] ?>);
+				internal.minAdultsOtherRooms=parseInt(<?= $this->options['min_adults_other_rooms'] ?>);
+				internal.maxAgeChildren=parseInt(<?= $this->options['max_age_children'] ?>);
 			" novalidate>
 
 				<label><?= __( 'Arrival date', 'vvb' ) ?></label>
