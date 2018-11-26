@@ -129,7 +129,7 @@
 {
     font-size: 18px;
     line-height: 30px;
-    width: 2em;
+    width: 3em;
     margin-right: 10px;
     padding: 8px;
     border: 1px solid #666;
@@ -161,7 +161,7 @@
 {
     font-size: 18px;
     line-height: 30px;
-    width: 2em;
+    width: 3em;
     padding: 8px;
     border: 1px solid #666;
     -webkit-border-radius: 0;
@@ -219,11 +219,11 @@
     #vvb .vvb_rooms .vvb_room .age
     {
         display: inline-block;
-        width: -webkit-calc(-webkit-calc(100% / 2) - 4px);
-        width: -moz-calc(-moz-calc(100% / 2) - 4px);
-        width: calc(calc(100% / 2) - 4px);
-        width: -webkit-calc((100% / 2) - 4px);
-        width: -moz-calc((100% / 2) - 4px);
-        width: calc((100% / 2) - 4px);
+        width: -webkit-calc(-webkit-calc(100% / 2) - 5px);
+        width: -moz-calc(-moz-calc(100% / 2) - 5px);
+        width: calc(calc(100% / 2) - 5px);
+        width: -webkit-calc((100% / 2) - 5px);
+        width: -moz-calc((100% / 2) - 5px);
+        width: calc((100% / 2) - 5px);
     }
 }
