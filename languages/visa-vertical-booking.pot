@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Visa Vertical Booking\n"
-"POT-Creation-Date: 2018-11-26 12:17+0100\n"
-"PO-Revision-Date: 2018-11-26 12:17+0100\n"
+"POT-Creation-Date: 2018-11-26 16:57+0100\n"
+"PO-Revision-Date: 2018-11-26 16:56+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -100,38 +100,42 @@ msgid "Departure date"
 msgstr ""
 
 #: public/class-vvb-public-shortcodes.php:85
-msgid "Rooms: "
+msgid "Rooms"
 msgstr ""
 
 #: public/class-vvb-public-shortcodes.php:86
-msgid "+"
-msgstr ""
-
-#: public/class-vvb-public-shortcodes.php:87
 msgid "-"
 msgstr ""
 
-#: public/class-vvb-public-shortcodes.php:92
+#: public/class-vvb-public-shortcodes.php:88
+msgid "+"
+msgstr ""
+
+#: public/class-vvb-public-shortcodes.php:94
 msgid "Room "
 msgstr ""
 
-#: public/class-vvb-public-shortcodes.php:93
+#: public/class-vvb-public-shortcodes.php:96
 msgid "Adults"
 msgstr ""
 
-#: public/class-vvb-public-shortcodes.php:95
+#: public/class-vvb-public-shortcodes.php:100
 msgid "Children"
 msgstr ""
 
-#: public/class-vvb-public-shortcodes.php:98
+#: public/class-vvb-public-shortcodes.php:106
 msgid "Child age "
 msgstr ""
 
-#: public/class-vvb-public-shortcodes.php:105
+#: public/class-vvb-public-shortcodes.php:108
+msgid "Select child age"
+msgstr ""
+
+#: public/class-vvb-public-shortcodes.php:115
 msgid "Submit"
 msgstr ""
 
-#: public/class-vvb-public-shortcodes.php:106
+#: public/class-vvb-public-shortcodes.php:116
 msgid ""
 "There are one or more errors in your request. Please correct them before "
 "submitting."

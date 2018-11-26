@@ -170,6 +170,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    margin-bottom: 10px;
 }
 #vvb .vvb_submit
 {
