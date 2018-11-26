@@ -218,8 +218,11 @@
     #vvb .vvb_rooms .vvb_room .age
     {
         display: inline-block;
-        width: -webkit-calc(100% / 2);
-        width: -moz-calc(100% / 2);
-        width: calc(100% / 2);
+        width: -webkit-calc(-webkit-calc(100% / 2) - 2px);
+        width: -moz-calc(-moz-calc(100% / 2) - 2px);
+        width: calc(calc(100% / 2) - 2px);
+        width: -webkit-calc((100% / 2) - 2px);
+        width: -moz-calc((100% / 2) - 2px);
+        width: calc((100% / 2) - 2px);
     }
 }
