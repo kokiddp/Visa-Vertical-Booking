@@ -41,7 +41,7 @@ define( 'VVB_VERSION', '1.0.0' );
  * Current environment state.
  *
  */
-define( 'VVB_ENVIRONMENT', 'production' );
+define( 'VVB_ENVIRONMENT', 'development' );
 
 /**
  * The code that runs during plugin activation.
