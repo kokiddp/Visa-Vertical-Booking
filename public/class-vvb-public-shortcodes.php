@@ -89,12 +89,14 @@ class Vvb_Public_Shortcodes {
 
 				<div class="vvb_rooms">
 					<div ng-repeat="x in form.rooms" class="vvb_room">
-						<label><?= __( 'Room ', 'visa-vertical-booking' ) ?>{{x.id}}</label>
-						<label><?= __( 'Adults', 'visa-vertical-booking' ) ?></label>
-						<select ng-model="x.adulti" ng-options="n for n in [] | range:x.minAdulti:(x.maxAdulti - x.bambini)"></select>
-						<label><?= __( 'Children', 'visa-vertical-booking' ) ?></label>
-						<select ng-model="x.bambini" ng-options="n for n in [] | range:x.minBambini:(x.maxBambini - x.adulti)"></select>
-						<div ng-repeat="y in [] | range:1:(x.bambini)">
+						<div class="people">
+							<label><?= __( 'Room ', 'visa-vertical-booking' ) ?>{{x.id}}</label>
+							<label><?= __( 'Adults', 'visa-vertical-booking' ) ?></label>
+							<select ng-model="x.adulti" ng-options="n for n in [] | range:x.minAdulti:(x.maxAdulti - x.bambini)"></select>
+							<label><?= __( 'Children', 'visa-vertical-booking' ) ?></label>
+							<select ng-model="x.bambini" ng-options="n for n in [] | range:x.minBambini:(x.maxBambini - x.adulti)"></select>
+						</div>
+						<div class="ages" ng-repeat="y in [] | range:1:(x.bambini)">
 							<label><?= __( 'Child age ', 'visa-vertical-booking' ) ?>{{y}}</label>
 							<select ng-model="form.ages[x.id][y]" ng-options="n for n in [] | range:0:(internal.maxAgeChildren)" ng-init="form.ages[x.id][y]=0" ng-required="true"></select>
 							<label class="validation-error" ng-if="!form.ages[x.id][y] && form.ages[x.id][y] !== 0"><?= __( 'Select child age', 'visa-vertical-booking' ) ?></label>
