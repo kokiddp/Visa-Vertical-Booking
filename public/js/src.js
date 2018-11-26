@@ -40,7 +40,7 @@ var _ = require('lodash');
                 maxAgeChildren: 17,
                 minArrivalDate: moment(new Date()).startOf('day').toDate(),
                 url: '',
-                queryString: '',                
+                queryString: '',
             }
             $scope.internal.minDepartDate = moment(new Date()).startOf('day').add(parseInt($scope.internal.minNights), 'd').toDate();
             $scope.internal.arrival = moment($scope.internal.minArrivalDate).startOf('day');
@@ -137,7 +137,7 @@ var _ = require('lodash');
         return function(input, min, max) {
             min = parseInt(min);
             max = parseInt(max);
-            for (var i=min; i<max; i++)
+            for (var i=min; i<=max; i++)
                 input.push(i);
             return input;
         };
