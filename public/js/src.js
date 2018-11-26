@@ -39,12 +39,15 @@ var _ = require('lodash');
                 minAdultsOtherRooms: 1,
                 maxAgeChildren: 17,
                 minArrivalDate: moment(new Date()).startOf('day').toDate(),
-                minDepartDate: moment(new Date()).startOf('day').add(parseInt($scope.internal.minNights), 'd').toDate(),
-                arrival: moment($scope.internal.minArrivalDate).startOf('day'),
-                depart: moment($scope.internal.minDepartDate).startOf('day'),
+                //minDepartDate: moment(new Date()).startOf('day').add(parseInt($scope.internal.minNights), 'd').toDate(),
+                //arrival: moment($scope.internal.minArrivalDate).startOf('day'),
+                //depart: moment($scope.internal.minDepartDate).startOf('day'),
                 url: '',
                 queryString: '',                
             }
+            $scope.internal.minDepartDate = moment(new Date()).startOf('day').add(parseInt($scope.internal.minNights), 'd').toDate();
+            $scope.internal.arrival = moment($scope.internal.minArrivalDate).startOf('day');
+            $scope.internal.depart = moment($scope.internal.minDepartDate).startOf('day');
 
             $scope.form = {
                 arrivalDate: moment(new Date()).startOf('day').toDate(),
