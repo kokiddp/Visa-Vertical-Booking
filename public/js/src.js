@@ -39,9 +39,6 @@ var _ = require('lodash');
                 minAdultsOtherRooms: 1,
                 maxAgeChildren: 17,
                 minArrivalDate: moment(new Date()).startOf('day').toDate(),
-                //minDepartDate: moment(new Date()).startOf('day').add(parseInt($scope.internal.minNights), 'd').toDate(),
-                //arrival: moment($scope.internal.minArrivalDate).startOf('day'),
-                //depart: moment($scope.internal.minDepartDate).startOf('day'),
                 url: '',
                 queryString: '',                
             }
@@ -71,12 +68,6 @@ var _ = require('lodash');
                 tot_camere: 0,
                 tot_adulti: 0,
                 tot_bambini: 0,
-                gg: 1,
-                mm: 1,
-                aa: 1970,
-                ggf: 2,
-                mmf: 1,
-                aaf: 1970,
                 notti_1: 1,
                 tot_camere: 1,
                 lingua_int: 'ita',
@@ -93,11 +84,8 @@ var _ = require('lodash');
             }, true);
 
             $scope.$watch("form.ages", function(){
-                debugger;
                 _.forEach($scope.form.ages, function(value, key){
-                    debugger;
                     _.forEach(value, function(value2, key2){
-                        debugger;
                         _.set($scope.submit, 'st' + key + 'bamb' + key2, value2);
                     });
                 });
