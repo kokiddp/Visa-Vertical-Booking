@@ -57946,9 +57946,19 @@ var _ = require('lodash');
         "$window",
         function($scope,$window) {
 
+            $scope.internal = {
+                minArrivalDate: moment(new Date()).startOf('day').toDate(),
+                minDepartDate: moment(new Date()).startOf('day').add(parseInt($scope.internal.minNights), 'd').toDate(),
+                arrival: moment($scope.internal.minArrivalDate).startOf('day'),
+                depart: moment($scope.internal.minDepartDate).startOf('day'),
+                url: '',
+                queryString: '',
+                maxRooms: 5
+            }
+
             $scope.form = {
                 arrivalDate: moment(new Date()).startOf('day').toDate(),
-                departDate: moment(new Date()).startOf('day').add(1, 'd').toDate(),
+                departDate: moment(new Date()).startOf('day').add(parseInt($scope.internal.minNights), 'd').toDate(),
                 rooms: [{
                     id: 1,
                     adulti: $scope.internal.defaultAdults,
@@ -57980,7 +57990,7 @@ var _ = require('lodash');
 
             $scope.internal = {
                 minArrivalDate: moment(new Date()).startOf('day').toDate(),
-                minDepartDate: moment(new Date()).startOf('day').add(1, 'd').toDate(),
+                minDepartDate: moment(new Date()).startOf('day').add(parseInt($scope.internal.minNights), 'd').toDate(),
                 arrival: moment($scope.form.arrivalDate).startOf('day'),
                 depart: moment($scope.form.departDate).startOf('day'),
                 url: '',
