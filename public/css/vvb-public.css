@@ -5,6 +5,7 @@
 }
 #vvb label
 {
+    display:block;
     font-size: 17px;
     color:#666666;
 }
@@ -60,10 +61,6 @@
     width: -moz-calc((100% / 3) * 1);
     width: calc((100% / 3) * 1);
     margin-bottom: 40px;
-}
-#vvb .vvb_rooms_controls label
-{
-    display: block;
 }
 #vvb .vvb_rooms_controls input[type=number],
 #vvb .vvb_rooms_controls input[type=text]
@@ -222,11 +219,11 @@
     #vvb .vvb_rooms .vvb_room .age
     {
         display: inline-block;
-        width: -webkit-calc(-webkit-calc(100% / 2) - 2px);
-        width: -moz-calc(-moz-calc(100% / 2) - 2px);
-        width: calc(calc(100% / 2) - 2px);
-        width: -webkit-calc((100% / 2) - 2px);
-        width: -moz-calc((100% / 2) - 2px);
-        width: calc((100% / 2) - 2px);
+        width: -webkit-calc(-webkit-calc(100% / 2) - 4px);
+        width: -moz-calc(-moz-calc(100% / 2) - 4px);
+        width: calc(calc(100% / 2) - 4px);
+        width: -webkit-calc((100% / 2) - 4px);
+        width: -moz-calc((100% / 2) - 4px);
+        width: calc((100% / 2) - 4px);
     }
 }
