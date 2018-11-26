@@ -71,12 +71,12 @@ class Vvb_Public_Shortcodes {
 				<div class="vvb_dates">
 					<div class="vvb_date vvb_date_arrival">
 						<label><?= __( 'Arrival date', 'visa-vertical-booking' ) ?></label>
-						<input name="arrivalDate" type="date" ng-model="form.arrivalDate" ng-min="{{internal.minArrivalDate}}" min="{{internal.minArrivalDate | date:'yyyy-MM-dd'}}">
+						<input name="arrivalDate" type="date" ng-model="form.arrivalDate" ng-min="{{internal.minArrivalDate}}" min="{{internal.minArrivalDate | date:'yyyy-MM-dd'}}" required>
 						<label class="validation-error" ng-if="vvbForm.arrivalDate.$invalid"><?= __( 'Invalid date!', 'visa-vertical-booking' ) ?></label>
 					</div>
 					<div class="vvb_date vvb_date_depart">
 						<label><?= __( 'Departure date', 'visa-vertical-booking' ) ?></label>
-						<input name="departDate" type="date" ng-model="form.departDate" ng-min="{{internal.minDepartDate}}" min="{{internal.minDepartDate | date:'yyyy-MM-dd'}}">
+						<input name="departDate" type="date" ng-model="form.departDate" ng-min="{{internal.minDepartDate}}" min="{{internal.minDepartDate | date:'yyyy-MM-dd'}}" required>
 						<label class="validation-error" ng-if="vvbForm.departDate.$invalid"><?= __( 'Invalid date!', 'visa-vertical-booking' ) ?></label>
 					</div>
 				</div>
@@ -84,7 +84,7 @@ class Vvb_Public_Shortcodes {
 				<div class="vvb_rooms_controls">
 					<label><?= __( 'Rooms', 'visa-vertical-booking' ) ?></label>
 					<input type="button" ng-click="removeRoom()" ng-disabled="form.rooms.length == 1" value="<?= __( '-', 'visa-vertical-booking' ) ?>" />
-					<input type="text" name="totalRooms" value="{{form.rooms.length}}"/>
+					<input type="number" name="totalRooms" value="{{form.rooms.length}}" readonly/>
 					<input type="button" ng-click="addRoom()" ng-disabled="form.rooms.length >= internal.maxRooms" value="<?= __( '+', 'visa-vertical-booking' ) ?>" />					
 				</div>
 
