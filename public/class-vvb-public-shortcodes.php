@@ -93,7 +93,7 @@ class Vvb_Public_Shortcodes {
 				<input type="button" ng-click="removeRoom()" ng-disabled="form.rooms.length == 1" value="<?= __( '-', 'vvb' ) ?>" />
 
 				<div ng-repeat="x in form.rooms">
-					<label><?= __( 'Room ', 'vvb' ) ?>{{x}}</label>
+					<label><?= __( 'Room ', 'vvb' ) ?>{{x.id}}</label>
 					<label><?= __( 'Adults', 'vvb' ) ?></label>
 					<select ng-model="x.adulti" ng-options="n for n in [] | range:x.minAdulti:(x.maxAdulti - x.bambini + 1)"></select>
 					<label><?= __( 'Children', 'vvb' ) ?></label>
