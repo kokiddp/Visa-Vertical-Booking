@@ -96,7 +96,7 @@ class Vvb_Public_Shortcodes {
 					<label><?= __( 'Adults', 'vvb' ) ?></label>
 					<select ng-model="x.adulti" ng-options="n for n in [] | range:x.minAdulti:(x.maxAdulti - x.bambini + 1)"></select>
 					<label><?= __( 'Children', 'vvb' ) ?></label>
-					<select ng-model="x.bambini" ng-options="n for n in [] | range:x.minBambini:(x.maxBambini - x.adulti + 1)"></select>
+					<select ng-model="x.bambini" ng-options="n for n in [] | range:x.minBambini:(x.maxBambini - x.adulti + 1)"></select>{{x.bambini}}
 					<div ng-repeat="y in x.bambini">
 						<label><?= __( 'Child age', 'vvb' ) ?></label>
 						<select ng-model="y.eta" ng-options="n for n in [] | range:0:(internal.maxAgeChildren + 1)"></select>
