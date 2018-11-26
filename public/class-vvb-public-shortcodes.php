@@ -92,10 +92,14 @@ class Vvb_Public_Shortcodes {
 					<div ng-repeat="x in form.rooms" class="vvb_room">
 						<div class="people">
 							<label><?= __( 'Room ', 'visa-vertical-booking' ) ?>{{x.id}}</label>
-							<label><?= __( 'Adults', 'visa-vertical-booking' ) ?></label>
-							<select ng-model="x.adulti" ng-options="n for n in [] | range:x.minAdulti:(x.maxAdulti - x.bambini)"></select>
-							<label><?= __( 'Children', 'visa-vertical-booking' ) ?></label>
-							<select ng-model="x.bambini" ng-options="n for n in [] | range:x.minBambini:(x.maxBambini - x.adulti)"></select>
+							<div class="adults">
+								<label><?= __( 'Adults', 'visa-vertical-booking' ) ?></label>
+								<select ng-model="x.adulti" ng-options="n for n in [] | range:x.minAdulti:(x.maxAdulti - x.bambini)"></select>
+							</div>
+							<div class="children">
+								<label><?= __( 'Children', 'visa-vertical-booking' ) ?></label>
+								<select ng-model="x.bambini" ng-options="n for n in [] | range:x.minBambini:(x.maxBambini - x.adulti)"></select>
+							</div>
 						</div>
 						<div class="ages" ng-repeat="y in [] | range:1:(x.bambini)">
 							<label><?= __( 'Child age ', 'visa-vertical-booking' ) ?>{{y}}</label>

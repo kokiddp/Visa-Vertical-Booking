@@ -104,7 +104,6 @@
 #vvb .vvb_rooms .vvb_room
 {
     margin-bottom: 10px;
-    padding: 10px;
 }
 #vvb .vvb_rooms .vvb_room .people
 {
@@ -113,10 +112,16 @@
     width: -moz-calc(100% / 3);
     width: calc(100% / 3);
 }
-#vvb .vvb_rooms .vvb_room .people > label:first-child
+#vvb .vvb_rooms .vvb_room .people > label
 {
     font-weight: bold;
     margin-right: 20px;
+    border-bottom: 1px solid #666666;
+}
+#vvb .vvb_rooms .vvb_room .people .adults,
+#vvb .vvb_rooms .vvb_room .people .children
+{
+    width:50%;
 }
 #vvb .vvb_rooms .vvb_room .people select
 {
