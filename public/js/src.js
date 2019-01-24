@@ -65,7 +65,6 @@ var _ = require('lodash');
                 id_albergo: '',
                 id_stile: '',
                 dc: '',
-                tot_camere: 0,
                 tot_adulti: 0,
                 tot_bambini: 0,
                 notti_1: 1,
