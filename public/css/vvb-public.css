@@ -275,14 +275,16 @@
     width: -moz-calc((100% - 40px) / 5);
     width: calc((100% - 40px) / 5);
     margin-bottom: 0;
-    margin-right: 20px;
+    margin-right: 0;
+    margin-left: 0;
 }
 #vvb.miniform .vvb_rooms_controls input[type=number]
 {
     font-size: 14px;
     line-height: 14px;
     width: 3em;
-    padding: 6px;
+    padding: 8px;
+    margin-right: 0;
 }
 #vvb.miniform .vvb_rooms_controls input[type=button]
 {
