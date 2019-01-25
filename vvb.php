@@ -16,7 +16,7 @@
  * Plugin Name:       Visa Vertical Booking
  * Plugin URI:        http://www.visamultimedia.com/
  * Description:       This plugin integrates a Vertical Booking reservation form.
- * Version:           1.0.0
+ * Version:           1.1.2
  * Author:            VisaMultimedia
  * Author URI:        http://www.visamultimedia.com/
  * License:           GPL-2.0+

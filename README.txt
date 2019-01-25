@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: elklab
 Donate link: https://www.elk-lab.com
-Tags: reservation
+Tags: reservation verticalbooking hotel
 Requires at least: 3.0.1
-Tested up to: 4.9.8
-Stable tag: 4.9
+Tested up to: 5.0.3
+Stable tag: 5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,7 +24,7 @@ As simple as it gets:
 1. Upload the plugin
 2. Activate it
 3. Configure it by setting the 4 option fields under Settings -> Visa Vertical Booking
-4. Place [vvb_display_form] shortcode wherever you want
+4. Place [vvb_display_form] or [vvb_display_mini_form] shortcode wherever you want (do not use both on same page)
 
 == Frequently Asked Questions ==
 
@@ -33,6 +33,9 @@ As simple as it gets:
 Check Vertical Booking contract
 
 == Changelog ==
+
+= 1.1 =
+* Add mini form
 
 = 1.0 =
 * First release
