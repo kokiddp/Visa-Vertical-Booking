@@ -313,12 +313,22 @@
     padding: 10px 1em!important;
 }
 
-@media (max-width:1200px)
+@media (max-width:1280px)
 {
     #vvb.miniform label
     {
         float: none;
         margin-bottom: 5px;
+    }
+    #vvb.miniform .vvb_submit
+    {
+        margin-top: 40px;
+    }
+    #vvb.miniform .vvb_dates .vvb_date
+    {
+        width: 100%;
+        margin-bottom: 20px;
+        margin-right: 0;
     }
 }
 @media (max-width:980px)
