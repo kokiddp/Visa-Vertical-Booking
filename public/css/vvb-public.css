@@ -3,6 +3,7 @@
     max-width: 1200px;
     margin:auto;
 }
+
 #vvb label
 {
     display:block;
@@ -14,6 +15,7 @@
     font-weight: bold;
     color: red;
 }
+
 #vvb .vvb_dates
 {
     float: left;
@@ -51,6 +53,7 @@
 {
     margin-right: 0;
 }
+
 #vvb .vvb_rooms_controls
 {
     float: left;
@@ -175,6 +178,7 @@
     appearance: none;
     margin-bottom: 10px;
 }
+
 #vvb .vvb_submit
 {
     margin-bottom: 30px;
@@ -191,11 +195,11 @@
     -moz-transition: color 300ms ease 0ms,background-color 300ms ease 0ms;
     transition: color 300ms ease 0ms,background-color 300ms ease 0ms;
 }
-
 #vvb .vvb_submit label
 {
     display: block;
 }
+
 @media (max-width:768px)
 {
     #vvb .vvb_dates
@@ -228,5 +232,54 @@
         width: -webkit-calc((100% / 2) - 5px);
         width: -moz-calc((100% / 2) - 5px);
         width: calc((100% / 2) - 5px);
+    }
+}
+
+#vvb.miniform label
+{
+    float:left;
+}
+#vvb label.validation-error{
+    float:none
+}
+#vvb.miniform .vvb_dates
+{
+    width: 50%;
+    margin-bottom: 0;
+}
+#vvb.miniform .vvb_dates .vvb_date
+{
+    float: left;
+    width: -webkit-calc(50% - 20px);
+    width: -moz-calc(50% - 20px);
+    width: calc(50% - 20px);
+}
+#vvb.miniform .vvb_dates .vvb_date input[type=date]
+{
+    font-size: 14px;
+    line-height: 14px;
+    padding: 10px;
+    width: 50%;
+}
+#vvb.miniform .vvb_rooms
+{
+    clear: none;
+    float:left;
+    width: 35%;
+    margin-bottom: 0;
+}
+#vvb.miniform .vvb_submit
+{
+    clear: none;
+    float:left;
+    width: 15%;
+    margin-bottom: 00px;
+}
+
+@media (max-width:768px)
+{
+    #vvb.miniform .vvb_dates
+    {
+        width: 100%;
     }
 }
