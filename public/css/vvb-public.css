@@ -305,11 +305,17 @@
 {
     font-size: 14px;
     line-height: 14px;
-    padding: 10px 1em;
+    padding: 10px 1em!important;
 }
 
-@media (max-width:768px)
+@media (max-width:980px)
 {
+    #vvb.miniform label
+    {
+        float: none;
+        margin-bottom: 5px;
+    }
+
     #vvb.miniform .vvb_dates,
     #vvb.miniform .vvb_rooms_controls,
     #vvb.miniform .vvb_submit
@@ -318,12 +324,28 @@
         margin-bottom: 20px;
         margin-right: 0;
     }
+    #vvb.miniform .vvb_rooms_controls,
+    #vvb.miniform .vvb_submit
+    {
+        width: 50%;
+        margin-bottom: 20px;
+        margin-right: 20px;
+    }
+    #vvb.miniform .vvb_submit
+    {
+        margin-right: 0;
+    }
 }
 @media (max-width:480px)
 {
     #vvb.miniform .vvb_dates .vvb_date
     {
         width: 100%;
+        margin-bottom: 20px;
         margin-right: 0;
+    }
+    #vvb.miniform .vvb_dates .vvb_date input[type=date]
+    {
+        float: right;
     }
 }
