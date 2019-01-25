@@ -7,7 +7,7 @@
 #vvb label
 {
     display:block;
-    font-size: 17px;
+    font-size: 14px;
     color:#666666;
 }
 #vvb label.validation-error
@@ -238,6 +238,7 @@
 #vvb.miniform label
 {
     float: left;
+    font-size: 14px;
     line-height: 35px;
     margin-right: 10px;
 }
@@ -377,13 +378,25 @@
 }
 @media (max-width:480px)
 {
-    #vvb.miniform .vvb_dates,
-    #vvb.miniform .vvb_rooms_controls,
-    #vvb.miniform .vvb_submit
+    #vvb.miniform .vvb_dates
     {
         width: 100%;
         margin-right: 0;
         margin-bottom: 0;
+    }
+    #vvb.miniform .vvb_rooms_controls
+    {
+        width: -webkit-calc(70% - 20px);
+        width: -moz-calc(70% - 20px);
+        width: calc(70% - 20px);
+        margin-right: 20px;
+    }
+    #vvb.miniform .vvb_submit
+    {
+        width: -webkit-calc(30% - 20px);
+        width: -moz-calc(30% - 20px);
+        width: calc(30% - 20px);
+        margin-right: 0;
     }
     #vvb.miniform label
     {
@@ -401,6 +414,6 @@
     }
     #vvb.miniform .vvb_submit
     {
-        margin-top: 20px;
+        margin-top: 40px;
     }
 }

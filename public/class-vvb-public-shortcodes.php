@@ -51,6 +51,8 @@ class Vvb_Public_Shortcodes {
 
 	/**
 	 * Undocumented function
+	 * 
+	 * @since    1.0.0
 	 *
 	 * @param [type] $atts
 	 * @return void
@@ -126,6 +128,8 @@ class Vvb_Public_Shortcodes {
 
 	/**
 	 * Undocumented function
+	 * 
+	 * @since    1.2.0
 	 *
 	 * @param [type] $atts
 	 * @return void
