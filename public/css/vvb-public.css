@@ -275,8 +275,7 @@
     width: -moz-calc((100% - 40px) / 5);
     width: calc((100% - 40px) / 5);
     margin-bottom: 0;
-    margin-right: 0;
-    margin-left: 0;
+    margin-right: 20px;
 }
 #vvb.miniform .vvb_rooms_controls input[type=number]
 {
@@ -291,6 +290,7 @@
     font-size: 14px;
     line-height: 14px;
     padding: 10px 1em!important;
+    margin-right: 0;
 }
 
 #vvb.miniform .vvb_submit
@@ -325,7 +325,6 @@
         float: none;
         margin-bottom: 5px;
     }
-
     #vvb.miniform .vvb_dates,
     #vvb.miniform .vvb_rooms_controls,
     #vvb.miniform .vvb_submit
