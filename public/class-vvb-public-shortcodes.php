@@ -160,7 +160,7 @@ class Vvb_Public_Shortcodes {
 				<div class="vvb_rooms_controls clearfix">
 					<label><?= __( 'Rooms', 'visa-vertical-booking' ) ?></label>
 					<input type="button" ng-click="removeRoom()" ng-disabled="form.rooms.length == 1" value="<?= __( '-', 'visa-vertical-booking' ) ?>" />
-					<input type="number" name="totalRooms" ng-value="{{form.rooms.length}}" readonly/>
+					<input type="number" name="totalRooms" value="{{form.rooms.length}}" readonly/>
 					<input type="button" ng-click="addRoom()" ng-disabled="form.rooms.length >= internal.maxRooms" value="<?= __( '+', 'visa-vertical-booking' ) ?>" />					
 				</div>
 

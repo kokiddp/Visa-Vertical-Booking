@@ -34,7 +34,7 @@ Check Vertical Booking contract
 
 == Changelog ==
 
-= 1.1 =
+= 1.2 =
 * Add mini form
 
 = 1.0 =
