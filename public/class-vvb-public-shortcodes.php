@@ -140,7 +140,7 @@ class Vvb_Public_Shortcodes {
 		ob_start();
 		?>
 
-		<div id="vvb" class="clearfix" ng-app="vvb" ng-controller="vvbMiniController" ng-init="internal.url='<?= $this->options['url'] ?>';submit.id_albergo=<?= $this->options['id_albergo'] ?>;submit.id_stile=<?= $this->options['id_stile'] ?>;submit.dc=<?= $this->options['dc'] ?>;internal.minNights=<?= $this->options['min_nights'] ?>;internal.maxRooms=<?= $this->options['max_rooms'] ?>;internal.maxPeople=<?= $this->options['max_people'] ?>;internal.defaultAdults=<?= $this->options['default_adults'] ?>;internal.minAdultsFirstRoom=<?= $this->options['min_adults_first_room'] ?>;internal.minAdultsOtherRooms=<?= $this->options['min_adults_other_rooms'] ?>;internal.maxAgeChildren=<?= $this->options['max_age_children'] ?>;" ng-cloak ng-strict-di>
+		<div id="vvb" class="clearfix" ng-app="vvb" ng-controller="vvbController" ng-init="internal.url='<?= $this->options['url'] ?>';submit.id_albergo=<?= $this->options['id_albergo'] ?>;submit.id_stile=<?= $this->options['id_stile'] ?>;submit.dc=<?= $this->options['dc'] ?>;internal.minNights=<?= $this->options['min_nights'] ?>;internal.maxRooms=<?= $this->options['max_rooms'] ?>;internal.maxPeople=<?= $this->options['max_people'] ?>;internal.defaultAdults=<?= $this->options['default_adults'] ?>;internal.minAdultsFirstRoom=<?= $this->options['min_adults_first_room'] ?>;internal.minAdultsOtherRooms=<?= $this->options['min_adults_other_rooms'] ?>;internal.maxAgeChildren=<?= $this->options['max_age_children'] ?>;" ng-cloak ng-strict-di>
 
 			<form name="vvbForm" novalidate>
 
@@ -157,34 +157,11 @@ class Vvb_Public_Shortcodes {
 					</div>
 				</div>
 
-				<div class="vvb_rooms_controls clearfix" style="display:none">
+				<div class="vvb_rooms_controls clearfix">
 					<label><?= __( 'Rooms', 'visa-vertical-booking' ) ?></label>
 					<input type="button" ng-click="removeRoom()" ng-disabled="form.rooms.length == 1" value="<?= __( '-', 'visa-vertical-booking' ) ?>" />
 					<input type="number" name="totalRooms" value="{{form.rooms.length}}" readonly/>
 					<input type="button" ng-click="addRoom()" ng-disabled="form.rooms.length >= internal.maxRooms" value="<?= __( '+', 'visa-vertical-booking' ) ?>" />					
-				</div>
-
-				<div class="vvb_rooms clearfix" style="display:none">
-					<div ng-repeat="x in form.rooms" class="vvb_room clearfix">
-						<div class="people clearfix">
-							<label><?= __( 'Room ', 'visa-vertical-booking' ) ?>{{x.id}}</label>
-							<div class="adults clearfix">
-								<label><?= __( 'Adults', 'visa-vertical-booking' ) ?></label>
-								<select ng-model="x.adulti" ng-options="n for n in [] | range:x.minAdulti:(x.maxAdulti - x.bambini)"></select>
-							</div>
-							<div class="children clearfix">
-								<label><?= __( 'Children', 'visa-vertical-booking' ) ?></label>
-								<select ng-model="x.bambini" ng-options="n for n in [] | range:x.minBambini:(x.maxBambini - x.adulti)"></select>
-							</div>
-						</div>
-						<div class="ages clearfix">
-							<div class="age clearfix" ng-repeat="y in [] | range:1:(x.bambini)">
-								<label><?= __( 'Child age ', 'visa-vertical-booking' ) ?>{{y}}</label>
-								<select ng-model="form.ages[x.id][y]" ng-options="n for n in [] | range:0:(internal.maxAgeChildren)" ng-init="form.ages[x.id][y]=0" ng-required="true"></select>
-								<label class="validation-error" ng-if="!form.ages[x.id][y] && form.ages[x.id][y] !== 0"><?= __( 'Select child age', 'visa-vertical-booking' ) ?></label>
-							</div>
-						</div>
-					</div>
 				</div>
 
 				<div class="vvb_submit clearfix">
