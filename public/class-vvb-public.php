@@ -75,6 +75,8 @@ class Vvb_Public {
 
 		$this->shortcodes = new Vvb_Public_Shortcodes();
 
+		$this->options = get_option( 'vvb_options' );
+
 	}
 
 	/**
@@ -125,11 +127,29 @@ class Vvb_Public {
 		 */
 
 		if ( $this->environment == 'production' ) {
-			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vvb-public.min.js', array( 'jquery' ), $this->version, false );
+			wp_register_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vvb-public.min.js', array( 'jquery' ), $this->version, false );
 		}
 		else {
-			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vvb-public.js', array( 'jquery' ), time(), false );
+			wp_register_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vvb-public.js', array( 'jquery' ), time(), false );
 		}
+
+		$option_array = array(
+			'url' => $this->options['url'],
+			'id_albergo' => $this->options['id_albergo'],
+			'id_stile' => $this->options['id_stile'],
+			'dc' => $this->options['dc'],
+			'minNights' => $this->options['min_nights'],
+			'maxRooms' => $this->options['max_rooms'],
+			'maxPeople' => $this->options['max_people'],
+			'defaultAdults' => $this->options['default_adults'],
+			'minAdultsFirstRoom' => $this->options['min_adults_first_room'],
+			'minAdultsOtherRooms' => $this->options['min_adults_other_rooms'],
+			'minAgeChildren' => $this->options['min_age_children'],
+			'maxAgeChildren' => $this->options['max_age_children'],
+		);
+		wp_localize_script( $this->plugin_name, 'vvb_options', $option_array );
+
+		wp_enqueue_script( $this->plugin_name );
 
 	}
 

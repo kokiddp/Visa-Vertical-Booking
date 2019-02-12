@@ -31,16 +31,16 @@ var _ = require('lodash');
         function($scope,$window) {
 
             $scope.internal = {
-                //minNights: 1,
-                //maxRooms: 6,
-                //maxPeople: 5,
-                //defaultAdults: 2,
-                //minAdultsFirstRoom: 2,
-                //minAdultsOtherRooms: 2,
-                //minAgeChildren: 14,
-                //maxAgeChildren: 17,
+                minNights: vvb_options.minNights,
+                maxRooms: vvb_options.maxRooms,
+                maxPeople: vvb_options.maxPeople,
+                defaultAdults: vvb_options.defaultAdults,
+                minAdultsFirstRoom: vvb_options.minAdultsFirstRoom,
+                minAdultsOtherRooms: vvb_options.minAdultsOtherRooms,
+                minAgeChildren: vvb_options.minAgeChildren,
+                maxAgeChildren: vvb_options.maxAgeChildren,
                 minArrivalDate: moment(new Date()).startOf('day').toDate(),
-                //url: '',
+                url: vvb_options.url,
                 queryString: '',
             }
             $scope.internal.minDepartDate = moment(new Date()).startOf('day').add(parseInt($scope.internal.minNights), 'd').toDate();
@@ -63,9 +63,9 @@ var _ = require('lodash');
             }
 
             $scope.submit = {
-                id_albergo: '',
-                id_stile: '',
-                dc: '',
+                id_albergo: vvb_options.id_albergo,
+                id_stile: vvb_options.id_stile,
+                dc: vvb_options.dc,
                 tot_adulti: 0,
                 tot_bambini: 0,
                 notti_1: 1,
