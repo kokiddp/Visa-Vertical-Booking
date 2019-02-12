@@ -52,12 +52,12 @@ var _ = require('lodash');
                 departDate: moment(new Date()).startOf('day').add(parseInt($scope.internal.minNights), 'd').toDate(),
                 rooms: [{
                     id: 1,
-                    adulti: $scope.internal.defaultAdults,
+                    adulti: vvb_options.defaultAdults,
                     bambini: 0,
-                    minAdulti: $scope.internal.minAdultsFirstRoom,
-                    maxAdulti: $scope.internal.maxPeople,
+                    minAdulti: vvb_options.minAdultsFirstRoom,
+                    maxAdulti: vvb_options.maxPeople,
                     minBambini: 0,
-                    maxBambini: $scope.internal.maxPeople,
+                    maxBambini: vvb_options.maxPeople,
                 }],
                 ages: [],
             }
@@ -113,12 +113,12 @@ var _ = require('lodash');
             $scope.addRoom = function(){
                 $scope.form.rooms.push({
                     id: _.last($scope.form.rooms).id+1,
-                    adulti: $scope.internal.defaultAdults,
+                    adulti: vvb_options.defaultAdults,
                     bambini: 0,
-                    minAdulti: $scope.internal.minAdultsOtherRooms,
-                    maxAdulti: $scope.internal.maxPeople,
+                    minAdulti: vvb_options.minAdultsOtherRooms,
+                    maxAdulti: vvb_options.maxPeople,
                     minBambini: 0,
-                    maxBambini: $scope.internal.maxPeople,
+                    maxBambini: vvb_options.maxPeople,
                 });
             }
 
