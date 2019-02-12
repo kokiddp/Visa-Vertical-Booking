@@ -34,6 +34,9 @@ Check Vertical Booking contract
 
 == Changelog ==
 
+= 1.3 =
+* Add min age for children
+
 = 1.2 =
 * Add mini form
 
