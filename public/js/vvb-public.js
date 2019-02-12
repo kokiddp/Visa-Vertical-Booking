@@ -58251,15 +58251,16 @@ var _ = require('lodash');
         function($scope,$window) {
 
             $scope.internal = {
-                minNights,
-                maxRooms,
-                maxPeople,
-                defaultAdults,
-                minAdultsFirstRoom,
-                minAdultsOtherRooms,
-                maxAgeChildren,
+                //minNights: 1,
+                //maxRooms: 6,
+                //maxPeople: 5,
+                //defaultAdults: 2,
+                //minAdultsFirstRoom: 2,
+                //minAdultsOtherRooms: 2,
+                //minAgeChildren: 14,
+                //maxAgeChildren: 17,
                 minArrivalDate: moment(new Date()).startOf('day').toDate(),
-                url: '',
+                //url: '',
                 queryString: '',
             }
             $scope.internal.minDepartDate = moment(new Date()).startOf('day').add(parseInt($scope.internal.minNights), 'd').toDate();

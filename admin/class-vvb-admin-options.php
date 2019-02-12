@@ -77,6 +77,7 @@ class Vvb_Admin_Options {
 		add_settings_field( 'vvb_min_adults_first_room', __('Minimum adults in first room', 'visa-vertical-booking'), array( $this, 'vvb_setting_min_adults_first_room'), 'vvb', 'vvb_config' );
 		add_settings_field( 'vvb_min_adults_other_rooms', __('Minimum adults in other rooms', 'visa-vertical-booking'), array( $this, 'vvb_setting_min_adults_other_rooms'), 'vvb', 'vvb_config' );
 		add_settings_field( 'vvb_max_age_children', __('Maximum age for children', 'visa-vertical-booking'), array( $this, 'vvb_setting_max_age_children'), 'vvb', 'vvb_config' );
+		add_settings_field( 'vvb_min_age_children', __('Minimum age for children', 'visa-vertical-booking'), array( $this, 'vvb_setting_min_age_children'), 'vvb', 'vvb_config' );
 	}
 
 	/**
@@ -194,6 +195,15 @@ class Vvb_Admin_Options {
 	 */
 	public function vvb_setting_max_age_children() {
 		echo "<input type='number' step='1' min='1' max='17' id='vvb_max_age_children' name='vvb_options[max_age_children]' value='{$this->options['max_age_children']}' />";
+	}
+
+	/**
+	 * Undocumented function
+	 *
+	 * @return void
+	 */
+	public function vvb_setting_min_age_children() {
+		echo "<input type='number' step='1' min='0' max='16' id='vvb_min_age_children' name='vvb_options[min_age_children]' value='{$this->options['min_age_children']}' />";
 	}
 
 	/**

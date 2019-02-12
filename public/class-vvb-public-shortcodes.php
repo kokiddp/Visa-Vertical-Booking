@@ -78,6 +78,7 @@ class Vvb_Public_Shortcodes {
 			internal.defaultAdults=<?= $this->options['default_adults'] ?>;
 			internal.minAdultsFirstRoom=<?= $this->options['min_adults_first_room'] ?>;
 			internal.minAdultsOtherRooms=<?= $this->options['min_adults_other_rooms'] ?>;
+			internal.minAgeChildren=<?= $this->options['min_age_children'] ?>;
 			internal.maxAgeChildren=<?= $this->options['max_age_children'] ?>;
 		" ng-cloak ng-strict-di>
 
@@ -119,7 +120,7 @@ class Vvb_Public_Shortcodes {
 						<div class="ages clearfix">
 							<div class="age clearfix" ng-repeat="y in [] | range:1:(x.bambini)">
 								<label><?= __( 'Child age ', 'visa-vertical-booking' ) ?>{{y}}</label>
-								<select ng-model="form.ages[x.id][y]" ng-options="n for n in [] | range:0:(internal.maxAgeChildren)" ng-init="form.ages[x.id][y]=0" ng-required="true"></select>
+								<select ng-model="form.ages[x.id][y]" ng-options="n for n in [] | range:(internal.minAgeChildren):(internal.maxAgeChildren)" ng-init="form.ages[x.id][y]=0" ng-required="true"></select>
 								<label class="validation-error" ng-if="!form.ages[x.id][y] && form.ages[x.id][y] !== 0"><?= __( 'Select child age', 'visa-vertical-booking' ) ?></label>
 							</div>
 						</div>
