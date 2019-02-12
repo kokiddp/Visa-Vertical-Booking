@@ -31,13 +31,13 @@ var _ = require('lodash');
         function($scope,$window) {
 
             $scope.internal = {
-                minNights: 1,
-                maxRooms: 5,
-                maxPeople: 5,
-                defaultAdults: 2,
-                minAdultsFirstRoom: 1,
-                minAdultsOtherRooms: 1,
-                maxAgeChildren: 17,
+                minNights,
+                maxRooms,
+                maxPeople,
+                defaultAdults,
+                minAdultsFirstRoom,
+                minAdultsOtherRooms,
+                maxAgeChildren,
                 minArrivalDate: moment(new Date()).startOf('day').toDate(),
                 url: '',
                 queryString: '',
