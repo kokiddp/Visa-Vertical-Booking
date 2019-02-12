@@ -113,12 +113,12 @@ var _ = require('lodash');
             $scope.addRoom = function(){
                 $scope.form.rooms.push({
                     id: _.last($scope.form.rooms).id+1,
-                    adulti: vvb_options.defaultAdults,
+                    adulti: parseInt(vvb_options.defaultAdults),
                     bambini: 0,
-                    minAdulti: vvb_options.minAdultsOtherRooms,
-                    maxAdulti: vvb_options.maxPeople,
+                    minAdulti: parseInt(vvb_options.minAdultsOtherRooms),
+                    maxAdulti: parseInt(vvb_options.maxPeople),
                     minBambini: 0,
-                    maxBambini: vvb_options.maxPeople,
+                    maxBambini: parseInt(vvb_options.maxPeople),
                 });
             }
 
