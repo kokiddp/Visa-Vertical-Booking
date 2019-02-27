@@ -1,0 +1,6 @@
+composer.lock
+
+node_modules
+
+/public/js/node_modules
+/public/js/package-lock.json
